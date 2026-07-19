@@ -16,7 +16,7 @@ export const products = [
     process: "Washed",
     variety: "Bourbon, Castillo",
     roastLevel: "Medium",
-    images: ["/products/house-blend.jpg"],
+    images: ["https://torocoffee.co.za/uploads/699583b7f3dc4.png"],
     rating: 4.8,
     reviewCount: 132,
     sizes: [
@@ -27,8 +27,8 @@ export const products = [
     grindOptions: ["Whole Bean", "Filter", "Espresso", "French Press"],
   },
   {
-    id: "ethiopia-yirgacheffe",
-    name: "Ethiopia Yirgacheffe",
+    id: "halo-beriti-natural-yirgacheffe",
+    name: "Halo Beriti Natural Yirgacheffe",
     origin: "Yirgacheffe, Ethiopia",
     category: "Coffee Beans",
     status: "New",
@@ -38,7 +38,7 @@ export const products = [
     process: "Washed",
     variety: "Heirloom",
     roastLevel: "Light",
-    images: ["/products/yirgacheffe.jpg"],
+    images: ["https://torocoffee.co.za/uploads/69957a569ce82.png"],
     rating: 4.9,
     reviewCount: 64,
     sizes: [
@@ -49,9 +49,9 @@ export const products = [
     grindOptions: ["Whole Bean", "Filter", "Espresso", "French Press"],
   },
   {
-    id: "sumatra-mandheling",
-    name: "Sumatra Mandheling",
-    origin: "Sumatra, Indonesia",
+    id: "barrel-aged-whiskey",
+    name: "Barrel Aged Whiskey",
+    origin: "Huila, Colombia",
     category: "Coffee Beans",
     status: "Limited",
     priceFrom: 150,
@@ -60,7 +60,7 @@ export const products = [
     process: "Wet-Hulled",
     variety: "Typica",
     roastLevel: "Dark",
-    images: ["/products/sumatra.jpg"],
+    images: ["https://torocoffee.co.za/uploads/69957b4cc7854.png"],
     rating: 4.7,
     reviewCount: 41,
     sizes: [
@@ -71,8 +71,8 @@ export const products = [
     grindOptions: ["Whole Bean", "Filter", "Espresso"],
   },
   {
-    id: "colombia-huila",
-    name: "Colombia Huila",
+    id: "xo-rum",
+    name: "XO Rum",
     origin: "Huila, Colombia",
     category: "Coffee Beans",
     status: null,
@@ -82,7 +82,7 @@ export const products = [
     process: "Washed",
     variety: "Caturra",
     roastLevel: "Medium",
-    images: ["/products/huila.jpg"],
+    images: ["https://torocoffee.co.za/uploads/69957b209c772.png"],
     rating: 4.6,
     reviewCount: 28,
     sizes: [
@@ -93,8 +93,8 @@ export const products = [
     grindOptions: ["Whole Bean", "Filter", "Espresso", "French Press"],
   },
   {
-    id: "decaf-swiss",
-    name: "Decaf (Swiss Water)",
+    id: "m-03-castilo-by-el-paraiso",
+    name: "M-03 Castilo by El Paraiso",
     origin: "Blend",
     category: "Coffee Beans",
     status: null,
@@ -104,7 +104,7 @@ export const products = [
     process: "Swiss Water Decaf",
     variety: "Mixed",
     roastLevel: "Medium",
-    images: ["/products/decaf.jpg"],
+    images: ["https://torocoffee.co.za/uploads/69957686879c7.png"],
     rating: 4.5,
     reviewCount: 19,
     sizes: [
@@ -115,9 +115,9 @@ export const products = [
     grindOptions: ["Whole Bean", "Filter", "Espresso"],
   },
   {
-    id: "guatemala-antigua",
-    name: "Guatemala Antigua",
-    origin: "Antigua, Guatemala",
+    id: "kiandu-ab-washed",
+    name: "Kiandu AB washed",
+    origin: "Narobi, Kenya",
     category: "Special Release",
     status: "Special",
     priceFrom: 155,
@@ -126,7 +126,7 @@ export const products = [
     process: "Washed",
     variety: "Bourbon",
     roastLevel: "Medium",
-    images: ["/products/antigua.jpg"],
+    images: ["https://torocoffee.co.za/uploads/69957ad7a4ee2.png"],
     rating: 4.8,
     reviewCount: 37,
     sizes: [

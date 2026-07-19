@@ -12,7 +12,7 @@ export default function Home() {
       <Hero />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <h2 className="font-display text-3xl font-bold text-toro-espresso">Our Selection</h2>
+        <h2 className="font-display text-3xl border-b border-toro-sand pb-2 mb-4 text-center font-bold text-toro-espresso">Our Selection</h2>
         <ProductGrid products={featured} />
         <div className="mt-8 text-center">
           <Link

@@ -19,7 +19,9 @@ export default function Shop() {
 
   function toggleNote(note) {
     setNotes((current) =>
-      current.includes(note) ? current.filter((n) => n !== note) : [...current, note]
+      current.includes(note)
+        ? current.filter((n) => n !== note)
+        : [...current, note],
     );
   }
 
@@ -31,7 +33,7 @@ export default function Shop() {
     }
     if (notes.length) {
       list = list.filter((product) =>
-        notes.every((note) => product.tastingNotes.includes(note))
+        notes.every((note) => product.tastingNotes.includes(note)),
       );
     }
 
@@ -45,7 +47,9 @@ export default function Shop() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
-      <h1 className="font-display text-3xl font-bold text-toro-espresso">Shop Coffee</h1>
+      <h1 className="font-display text-3xl font-bold text-toro-espresso">
+        Shop Coffee
+      </h1>
 
       <div className="mt-6 flex flex-col gap-4 border-b border-toro-sand pb-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex flex-wrap gap-2">
@@ -98,7 +102,7 @@ export default function Shop() {
         ))}
       </div>
 
-      <div className="mt-8">
+      <div className="mt-10">
         <ProductGrid products={visible} />
       </div>
     </div>
