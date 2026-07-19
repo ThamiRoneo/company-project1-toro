@@ -1,0 +1,31 @@
+/* Toro Coffee — global stylesheet (Tailwind CSS v4 entry).
+   Theme tokens are declared with @theme so utilities like bg-toro-espresso work. */
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette — warm, earthy coffee tones */
+  --color-toro-cream: #f7f1e8;
+  --color-toro-sand: #e8dcc8;
+  --color-toro-clay: #c08457;
+  --color-toro-brown: #6f4e37;
+  --color-toro-espresso: #3b2a20;
+  --color-toro-char: #2a1d15;
+
+  /* Typography */
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Inter", "system-ui", sans-serif;
+
+  /* Base radius used across cards/buttons */
+  --radius-toro: 0.75rem;
+}
+
+/* Smooth scrolling + accessible focus defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-toro-cream);
+  color: var(--color-toro-espresso);
+}
