@@ -4,6 +4,7 @@
 // mini-cart indicator. Collapses to a hamburger drawer below md.
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import toroLogo from "../assets/toro-logo.png";
 
 const primaryLinks = [
   { to: "/", label: "Home" },
@@ -16,10 +17,14 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-toro-sand bg-toro-cream/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-        <Link to="/" className="font-display text-2xl font-bold text-toro-espresso">
-          Toro
+    <header className="sticky top-0 z-40 border-b border-toro-sand bg-toro-cream/95 backdrop-blur bg-transparent rounded-xl">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+        <Link to="/" className="flex items-center">
+          <img
+            src={toroLogo}
+            alt="Toro Coffee"
+            className="h-9 w-auto rounded-full"
+          />
         </Link>
 
         <nav className="hidden items-center gap-6 md:flex" aria-label="Primary">
@@ -29,7 +34,7 @@ export default function Header() {
               to={link.to}
               end={link.to === "/"}
               className={({ isActive }) =>
-                `text-sm font-medium transition-colors hover:text-toro-clay ${
+                `text-sm font-large transition-colors hover:text-toro-clay ${
                   isActive ? "text-toro-clay" : "text-toro-espresso"
                 }`
               }
@@ -77,7 +82,10 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <nav className="border-t border-toro-sand bg-toro-cream md:hidden" aria-label="Mobile">
+        <nav
+          className="border-t border-toro-sand bg-toro-cream md:hidden"
+          aria-label="Mobile"
+        >
           <ul className="flex flex-col px-4 py-2">
             {primaryLinks.map((link) => (
               <li key={link.to}>
@@ -109,7 +117,14 @@ export default function Header() {
 
 function SearchIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <circle cx="11" cy="11" r="7" />
       <path d="m21 21-4.3-4.3" />
     </svg>
@@ -118,7 +133,14 @@ function SearchIcon() {
 
 function CartIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M6 6h15l-1.5 9h-12z" />
       <circle cx="9" cy="20" r="1" />
       <circle cx="18" cy="20" r="1" />
@@ -129,7 +151,14 @@ function CartIcon() {
 
 function MenuIcon() {
   return (
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
       <path d="M3 6h18M3 12h18M3 18h18" />
     </svg>
   );
