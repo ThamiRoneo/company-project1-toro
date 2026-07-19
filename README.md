@@ -84,12 +84,12 @@ The site will be available at `http://localhost:5173` (or the port shown in your
 
 ## Available Scripts
 
-| Command | Description |
-|---|---|
-| `npm run dev` | Runs the app in development mode |
-| `npm run build` | Builds the app for production |
+| Command           | Description                           |
+| ----------------- | ------------------------------------- |
+| `npm run dev`     | Runs the app in development mode      |
+| `npm run build`   | Builds the app for production         |
 | `npm run preview` | Previews the production build locally |
-| `npm run lint` | Runs ESLint checks |
+| `npm run lint`    | Runs ESLint checks                    |
 
 ## Design Decisions
 
@@ -105,11 +105,11 @@ Key fixes and improvements made in this redesign, based on the audit in `BRIEF.m
 
 ## Outreach
 
-As required by the project brief, Toro Coffee was contacted directly to share this redesign as a student learning project. Evidence of this outreach is included in [`outreach-proof/`](./outreach-proof).
+As required by the project brief, Toro Coffee was contacted directly to share this redesign as a student learning project. Evidence of this outreach is included in [`outreach-proof/email-proof.png`](./outreach-proof/email-proof.png).
 
 ## Deliverables Checklist
 
 - [x] `BRIEF.md` — company research & justification
 - [x] Redesigned website (React + Tailwind CSS)
-- [ ] Proof of outreach to Toro Coffee
+- [x] Proof of outreach to Toro Coffee
 - [x] Live deployed link — [torocoffee-app.netlify.app](https://torocoffee-app.netlify.app
