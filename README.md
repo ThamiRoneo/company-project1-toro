@@ -1,18 +1,115 @@
-# React + Vite
+# Toro Coffee — Website Redesign
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A UX-driven redesign of [torocoffee.co.za](https://torocoffee.co.za), built as Company Project 1 for Melsoft Academy's AI Software Engineering programme.
 
-Currently, two official plugins are available:
+**🔗 Live site:** [torocoffee-app.netlify.app](https://torocoffee-app.netlify.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project takes a real, existing business — Toro Coffee, a specialty coffee roaster in Potchefstroom, South Africa — and rebuilds their website using React and Tailwind CSS, based on a full UX/UI audit against Nielsen Norman Group's usability heuristics and WCAG 2.2 accessibility standards.
 
-## React Compiler
+---
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Table of Contents
 
-Note: This will impact Vite dev & build performances.
+- [Toro Coffee — Website Redesign](#toro-coffee--website-redesign)
+  - [Table of Contents](#table-of-contents)
+  - [About the Project](#about-the-project)
+  - [Why Toro Coffee](#why-toro-coffee)
+  - [Tech Stack](#tech-stack)
+  - [Project Structure](#project-structure)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+  - [Available Scripts](#available-scripts)
+  - [Design Decisions](#design-decisions)
+  - [Outreach](#outreach)
+  - [Deliverables Checklist](#deliverables-checklist)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## About the Project
+
+Toro Coffee's current website has a strong brand story and genuinely good product data, but suffers from real usability issues — broken "Add to Cart" states on out-of-stock products, inconsistent branding across pages, no visible accessibility controls on the autoplaying hero video, and missing trust signals like tasting notes and social proof.
+
+This redesign addresses those issues directly, rebuilding the experience with a mobile-first, accessible, and conversion-focused approach while staying true to Toro's actual identity, culture, and offering.
+
+Full research and justification for this redesign is documented in [`BRIEF.md`](./BRIEF.md).
+
+## Why Toro Coffee
+
+I chose Toro Coffee because I have a genuine connection to the brand from my time as a student in Potchefstroom, where I became a regular customer. I've watched the business grow from one store into multiple locations, and I've always been given a warm welcome there. That warmth is central to who Toro is — and it's something their current website doesn't yet communicate. Full details are in [`BRIEF.md`](./BRIEF.md).
+
+## Tech Stack
+
+- **Framework:** React (functional components + hooks)
+- **Styling:** Tailwind CSS
+- **Build tool:** Vite
+- **Deployment:** Vercel / Netlify
+
+## Project Structure
+
+```
+company-project-1/
+├── BRIEF.md                 # Company research & redesign justification
+├── README.md                # This file
+├── src/
+│   ├── components/          # Header, Hero, ProductCard, Footer, etc.
+│   ├── App.jsx
+│   └── ...
+├── public/
+└── outreach-proof/          # Evidence of outreach to Toro Coffee
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/<your-username>/company-project-1.git
+cd company-project-1
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The site will be available at `http://localhost:5173` (or the port shown in your terminal).
+
+## Available Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Runs the app in development mode |
+| `npm run build` | Builds the app for production |
+| `npm run preview` | Previews the production build locally |
+| `npm run lint` | Runs ESLint checks |
+
+## Design Decisions
+
+Key fixes and improvements made in this redesign, based on the audit in `BRIEF.md`:
+
+- **Fixed false-affordance CTAs** — out-of-stock products now show a disabled "Sold Out" or "Notify Me" state instead of an active "Add to Cart" button
+- **Unified brand voice** — one consistent footer tagline and value proposition across every page
+- **Segmented navigation** — separated the consumer shopping journey (Shop) from the business/franchise journey
+- **Accessible hero media** — added visible pause/mute controls to hero video content, or replaced autoplay with a static image on mobile
+- **Added sensory product content** — tasting notes and grind-size options on product pages
+- **Added trust signals** — social proof section, social media links, and policy links in the footer
+- **Mobile-first, touch-friendly components** — rebuilt size/quantity selectors and nav for reliable touch interaction
+
+## Outreach
+
+As required by the project brief, Toro Coffee was contacted directly to share this redesign as a student learning project. Evidence of this outreach is included in [`outreach-proof/`](./outreach-proof).
+
+## Deliverables Checklist
+
+- [x] `BRIEF.md` — company research & justification
+- [x] Redesigned website (React + Tailwind CSS)
+- [ ] Proof of outreach to Toro Coffee
+- [x] Live deployed link — [torocoffee-app.netlify.app](https://torocoffee-app.netlify.app
