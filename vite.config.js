@@ -10,4 +10,14 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  server: {
+    // Proxy the Instagram RSS feed so the browser fetch avoids CORS.
+    proxy: {
+      '/ig-feed': {
+        target: 'https://rss-bridge.org',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/ig-feed/, ''),
+      },
+    },
+  },
 })
