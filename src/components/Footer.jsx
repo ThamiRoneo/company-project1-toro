@@ -38,8 +38,8 @@ export default function Footer() {
         <div>
           <h3 className="text-sm font-semibold uppercase tracking-wide">Contact</h3>
           <address className="mt-3 space-y-2 text-sm not-italic text-toro-sand">
-            <p>173 Oxford Road, Rosebank, Sandton</p>
-            <p>010 158 4346</p>
+            <p>99 Mollen St, Potchefstrooom</p>
+            <p>+27 72 470 1971</p>
             <p>hello@torocoffee.co.za</p>
           </address>
         </div>
