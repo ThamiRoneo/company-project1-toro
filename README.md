@@ -20,6 +20,7 @@ This project takes a real, existing business — Toro Coffee, a specialty coffee
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
   - [Available Scripts](#available-scripts)
+  - [Screenshots](#screenshots)
   - [Design Decisions](#design-decisions)
   - [Outreach](#outreach)
   - [Deliverables Checklist](#deliverables-checklist)
@@ -91,6 +92,26 @@ The site will be available at `http://localhost:5173` (or the port shown in your
 | `npm run preview` | Previews the production build locally |
 | `npm run lint`    | Runs ESLint checks                    |
 
+## Screenshots
+
+**Homepage**
+![Homepage](./src/assets/old-home-design.png)
+
+**Home Redesign**
+![Home Redesign](./src/assets/home-redesign.png)
+
+**Shop page**
+![Shop page](./src/assets/old-shop-design.png)
+
+**Shop page redesign**
+Added modern filtering and sorting features. Can sort by "Newest Roast", Price: High-Low (& vice versa), Popularity. Again, one can filter products by clicking the tasting notes: Chocolate, Floral, Citrus, Earthy, Nutty, Fruity, and Spice.
+
+![Shop page redesign](./src/assets/shop-redesign.png)
+
+When pressing the "Add to Cart" button, this is the new cart preview, which offers much more information to the customer about the product they are about to buy.
+
+![Add to cart redesign](./src/assets/add-cart-redesign.png)
+
 ## Design Decisions
 
 Key fixes and improvements made in this redesign, based on the audit in `BRIEF.md`:
@@ -98,7 +119,7 @@ Key fixes and improvements made in this redesign, based on the audit in `BRIEF.m
 - **Fixed false-affordance CTAs** — out-of-stock products now show a disabled "Sold Out" or "Notify Me" state instead of an active "Add to Cart" button
 - **Unified brand voice** — one consistent footer tagline and value proposition across every page
 - **Segmented navigation** — separated the consumer shopping journey (Shop) from the business/franchise journey
-- **Accessible hero media** — added visible pause/mute controls to hero video content, or replaced autoplay with a static image on mobile
+- **Accessible hero media** — added visible slideshow hero pictures content, or replaced autoplay with a static image on mobile.
 - **Added sensory product content** — tasting notes and grind-size options on product pages
 - **Added trust signals** — social proof section, social media links, and policy links in the footer
 - **Mobile-first, touch-friendly components** — rebuilt size/quantity selectors and nav for reliable touch interaction
