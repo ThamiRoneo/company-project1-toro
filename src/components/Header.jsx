@@ -17,7 +17,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-toro-sand bg-toro-cream/95 backdrop-blur bg-transparent rounded-xl">
+    <header className="sticky top-0 z-40 border-b border-toro-sand  backdrop-blur bg-transparent rounded-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex items-center">
           <img
