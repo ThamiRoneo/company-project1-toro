@@ -51,12 +51,6 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link
-            to="/account"
-            className="hidden text-sm font-medium text-toro-espresso hover:text-toro-clay md:inline-block"
-          >
-            Sign In
-          </Link>
           <button
             type="button"
             aria-label="Search products"
@@ -75,6 +69,12 @@ export default function Header() {
             </span>
           </Link>
 
+          <Link
+            to="/account"
+            className="hidden text-sm font-medium text-toro-espresso hover:text-toro-clay md:inline-block ml-1.25"
+          >
+            Sign In
+          </Link>
           <button
             type="button"
             aria-label="Toggle menu"
