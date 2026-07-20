@@ -9,12 +9,14 @@ export default function SignUp() {
   }
 
   return (
-    <div className="py-12">
-      <div className="mb-8 text-center">
-        <h1 className="font-display text-3xl font-bold text-toro-espresso">Create an Account</h1>
-        <p className="mt-2 text-toro-brown">Join Toro Coffee and order fresh roasted beans delivered to your door.</p>
+    <div className="mx-auto max-w-xl px-4 py-12 sm:px-6">
+      <div className="rounded-toro border border-toro-sand bg-white p-6 shadow-sm sm:p-10">
+        <div className="mb-8 text-center">
+          <h1 className="font-display text-3xl font-bold text-toro-espresso">Create an Account</h1>
+          <p className="mt-2 text-toro-brown">Join Toro Coffee and order fresh roasted beans delivered to your door.</p>
+        </div>
+        <SignUpForm onSubmit={handleSubmit} />
       </div>
-      <SignUpForm onSubmit={handleSubmit} />
     </div>
   );
 }
