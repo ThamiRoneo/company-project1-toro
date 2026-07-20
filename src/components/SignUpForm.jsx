@@ -1,5 +1,6 @@
 // Reusable sign-up form with validation, ARIA attributes, and responsive styling.
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function SignUpForm({ onSubmit }) {
   const [form, setForm] = useState({
@@ -164,12 +165,18 @@ export default function SignUpForm({ onSubmit }) {
         )}
       </div>
 
-      <button
-        type="submit"
-        className="w-full rounded-full bg-toro-brown py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso focus:outline-none focus:ring-2 focus:ring-toro-brown/40 focus:ring-offset-2"
-      >
-        Create Account
-      </button>
+        <button
+          type="submit"
+          className="w-full rounded-full bg-toro-brown py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso focus:outline-none focus:ring-2 focus:ring-toro-brown/40 focus:ring-offset-2"
+        >
+          Create Account
+        </button>
+        <p className="text-center text-sm text-toro-brown">
+          Already have an account?{" "}
+          <Link to="/login" className="font-semibold text-toro-clay hover:underline">
+            Login
+          </Link>
+        </p>
     </form>
   );
 }
