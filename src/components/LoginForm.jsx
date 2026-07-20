@@ -1,5 +1,6 @@
 // Reusable login form with email, password, and a "Remember me" checkbox.
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function LoginForm({ onSubmit }) {
   const [form, setForm] = useState({ email: "", password: "", remember: false });
@@ -106,12 +107,18 @@ export default function LoginForm({ onSubmit }) {
         </label>
       </div>
 
-      <button
-        type="submit"
-        className="w-full rounded-full bg-toro-brown py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso focus:outline-none focus:ring-2 focus:ring-toro-brown/40 focus:ring-offset-2"
-      >
-        Log In
-      </button>
+        <button
+          type="submit"
+          className="w-full rounded-full bg-toro-brown py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso focus:outline-none focus:ring-2 focus:ring-toro-brown/40 focus:ring-offset-2"
+        >
+          Log In
+        </button>
+        <p className="text-center text-sm text-toro-brown">
+          Do not have an account?{" "}
+          <Link to="/signup" className="font-semibold text-toro-clay hover:underline">
+            Sign up
+          </Link>
+        </p>
     </form>
   );
 }
