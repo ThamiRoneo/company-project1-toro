@@ -10,10 +10,19 @@ export default function SignUpForm({ onSubmit }) {
   });
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
+  const [passwordChecks, setPasswordChecks] = useState({ length: false, upper: false, number: false, symbol: false });
 
   function update(key, value) {
     setForm((prev) => ({ ...prev, [key]: value }));
     if (touched[key]) validateField(key, value);
+    if (key === "password") {
+      setPasswordChecks({
+        length: value.length >= 8,
+        upper: /[A-Z]/.test(value),
+        number: /[0-9]/.test(value),
+        symbol: /[^A-Za-z0-9]/.test(value),
+      });
+    }
   }
 
   function validateField(key, value) {
@@ -27,6 +36,7 @@ export default function SignUpForm({ onSubmit }) {
       if (value.length < 8) message = "Password must be at least 8 characters";
       else if (!/[A-Z]/.test(value)) message = "Include at least one uppercase letter";
       else if (!/[0-9]/.test(value)) message = "Include at least one number";
+      else if (!/[^A-Za-z0-9]/.test(value)) message = "Include at least one symbol";
     }
     setErrors((prev) => ({ ...prev, [key]: message }));
     return !message;
@@ -112,15 +122,18 @@ export default function SignUpForm({ onSubmit }) {
           value={form.password}
           onChange={(e) => update("password", e.target.value)}
           onBlur={() => setTouched((p) => ({ ...p, password: true }))}
-          placeholder="At least 8 characters, 1 uppercase, 1 number"
+          placeholder="At least 8 characters, 1 uppercase, 1 number, 1 symbol"
           aria-required="true"
           aria-invalid={!!(touched.password && errors.password)}
           aria-describedby={errors.password ? "password-error" : "password-hint"}
           className={inputClasses("password")}
         />
-        <p id="password-hint" className="mt-1 text-xs text-toro-brown">
-          Use at least 8 characters with an uppercase letter and a number.
-        </p>
+        <ul className="mt-2 space-y-1 text-xs" id="password-hint">
+          <PasswordRule label="At least 8 characters" met={passwordChecks.length} />
+          <PasswordRule label="1 uppercase letter" met={passwordChecks.upper} />
+          <PasswordRule label="1 number" met={passwordChecks.number} />
+          <PasswordRule label="1 symbol (e.g. !@#$%)" met={passwordChecks.symbol} />
+        </ul>
         {touched.password && errors.password && (
           <p id="password-error" className="mt-1 text-sm text-red-600" role="alert">
             {errors.password}
@@ -158,6 +171,15 @@ export default function SignUpForm({ onSubmit }) {
         Create Account
       </button>
     </form>
+  );
+}
+
+function PasswordRule({ label, met }) {
+  return (
+    <li className={`flex items-center gap-2 ${met ? "text-green-600" : "text-gray-400"}`}>
+      <span aria-hidden="true">{met ? "✓" : "•"}</span>
+      <span>{label}</span>
+    </li>
   );
 }
 
