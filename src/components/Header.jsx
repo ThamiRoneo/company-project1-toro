@@ -70,8 +70,8 @@ export default function Header() {
           </Link>
 
           <Link
-            to="/account"
-            className="hidden text-sm font-medium text-toro-espresso hover:text-toro-clay md:inline-block ml-1.25"
+            to="/login"
+            className="hidden text-sm font-medium text-toro-espresso hover:text-toro-clay md:inline-block"
           >
             Sign In
           </Link>
@@ -116,7 +116,7 @@ export default function Header() {
             </li>
             <li>
               <NavLink
-                to="/account"
+                to="/login"
                 onClick={() => setMobileOpen(false)}
                 className="block py-2 text-sm font-medium text-toro-espresso"
               >
