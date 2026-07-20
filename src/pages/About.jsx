@@ -1,6 +1,7 @@
 // About page — Toro's full brand story, interactive timeline, and dynamic content.
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [
@@ -169,7 +170,7 @@ export default function About() {
               <button
                 type="button"
                 onClick={() => setActiveYear(item.year)}
-                className={`absolute -left-[1.65rem] top-1 h-4 w-4 rounded-full transition-all ${
+                className={`absolute left-[1.65rem] top-1 h-4 w-4 rounded-full transition-all ${
                   activeYear === item.year ? "bg-toro-clay ring-4 ring-toro-clay/20" : "bg-toro-sand hover:bg-toro-clay"
                 }`}
                 aria-label={`Jump to ${item.year}: ${item.label}`}
@@ -206,14 +207,25 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contact */}
-      <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <h2 className="font-display text-3xl font-bold text-toro-espresso">Get in Touch</h2>
-        <address className="mt-4 not-italic text-toro-espresso">
-          <p>99 Molen St, Potchefstroom, 2520</p>
-          <p>Email: info@torocoffee.co.za</p>
-          <p>Phone: +27 72 470 1971</p>
-        </address>
+      {/* CTA */}
+      <section className="mx-auto max-w-5xl border-toro-sand rounded-toro border bg-white px-4 py-16 sm:px-6">
+        <p className="text-center font-display text-2xl font-semibold text-toro-espresso sm:text-3xl">
+          Join us on our journey to create a better future
+        </p>
+        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <Link
+            to="/shop"
+            className="w-full rounded-full bg-toro-brown px-8 py-3 text-center text-base font-semibold text-toro-cream hover:bg-toro-espresso sm:w-auto"
+          >
+            Shop with us
+          </Link>
+          <Link
+            to="/franchise"
+            className="w-full rounded-full border-2 border-toro-brown px-8 py-3 text-center text-base font-semibold text-toro-brown hover:bg-toro-brown hover:text-toro-cream sm:w-auto"
+          >
+            Join our business
+          </Link>
+        </div>
       </section>
     </div>
   );
