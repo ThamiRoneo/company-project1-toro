@@ -23,6 +23,17 @@ export default function Footer() {
           <p className="mt-2 text-sm text-toro-sand">
             Premium artisan coffee beans, expertly roasted and delivered fresh.
           </p>
+          <div className="mt-4 flex items-center gap-3">
+            <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" aria-label="Facebook" className="text-toro-sand hover:text-toro-cream">
+              <FacebookIcon />
+            </a>
+            <a href="https://instagram.com/toro.community" target="_blank" rel="noreferrer noopener" aria-label="Instagram" className="text-toro-sand hover:text-toro-cream">
+              <InstagramIcon />
+            </a>
+            <a href="https://x.com" target="_blank" rel="noreferrer noopener" aria-label="X (Twitter)" className="text-toro-sand hover:text-toro-cream">
+              <XIcon />
+            </a>
+          </div>
         </div>
 
         <div>
@@ -82,5 +93,31 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function FacebookIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+    </svg>
+  );
+}
+
+function InstagramIcon() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" />
+      <circle cx="12" cy="12" r="5" />
+      <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+function XIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
   );
 }
