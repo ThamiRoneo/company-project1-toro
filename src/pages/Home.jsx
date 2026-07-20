@@ -1,6 +1,7 @@
 // Home page — hero plus a condensed trust strip surfacing Toro's story.
 import Hero from "../components/Hero.jsx";
 import ProductGrid from "../components/ProductGrid.jsx";
+import InstagramFeed from "../components/InstagramFeed.jsx";
 import { products } from "../data/products.js";
 import { Link } from "react-router-dom";
 
@@ -12,7 +13,7 @@ export default function Home() {
       <Hero />
 
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-        <h2 className="font-display text-3xl font-bold text-toro-espresso">Our Selection</h2>
+        <h2 className="font-display text-3xl border-b border-toro-sand pb-2 mb-4 text-center font-bold text-toro-espresso">Our Selection</h2>
         <ProductGrid products={featured} />
         <div className="mt-8 text-center">
           <Link
@@ -27,9 +28,13 @@ export default function Home() {
       <section className="bg-toro-sand">
         <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
           <p className="font-display text-2xl font-semibold text-toro-espresso">
-            Trusted by our community since 2015 · 3 locations across Johannesburg
+            Trusted by our community since 2015 · 4 locations across Potchefstroom
           </p>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <InstagramFeed username="toro.community" />
       </section>
     </div>
   );
