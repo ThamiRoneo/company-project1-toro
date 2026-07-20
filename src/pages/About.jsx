@@ -164,13 +164,13 @@ export default function About() {
           <p className="mt-4 text-base leading-relaxed text-toro-espresso">{active.body}</p>
         </div>
 
-        <ol className="mx-auto mt-10 max-w-3xl border-l-2 border-toro-sand pl-6">
+        <ol className="mx-auto mt-10 max-w-3xl border-l-2 border-toro-sand">
           {TIMELINE.map((item) => (
-            <li key={item.year} className="relative mb-8">
+            <li key={item.year} className="relative mb-8 pl-8">
               <button
                 type="button"
                 onClick={() => setActiveYear(item.year)}
-                className={`absolute left-[1.65rem] top-1 h-4 w-4 rounded-full transition-all ${
+                className={`absolute left-0 top-1 h-4 w-4 -translate-x-[9px] rounded-full transition-all ${
                   activeYear === item.year ? "bg-toro-clay ring-4 ring-toro-clay/20" : "bg-toro-sand hover:bg-toro-clay"
                 }`}
                 aria-label={`Jump to ${item.year}: ${item.label}`}
