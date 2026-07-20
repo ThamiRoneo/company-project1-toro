@@ -1,6 +1,7 @@
 // About page — Toro's full brand story, interactive timeline, and dynamic content.
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
+import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [
   {
@@ -110,8 +111,14 @@ export default function About() {
   return (
     <div className="overflow-hidden">
       {/* Hero */}
-      <section className="relative bg-toro-espresso py-16 text-center text-toro-cream sm:py-24">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+      <section className="relative overflow-hidden bg-toro-espresso py-16 text-center text-toro-cream sm:py-24">
+        <img
+          src={aboutHero}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-50"
+        />
+        <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
           <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">The Toro Story</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-toro-sand">
             From Dream to Cup — bringing exceptional specialty coffee into everyday life.
