@@ -57,8 +57,8 @@ export default function SignUpForm({ onSubmit }) {
   return (
     <form onSubmit={handleSubmit} noValidate className="mx-auto max-w-xl space-y-6 px-4 sm:px-6">
       <div>
-        <label htmlFor="fullName" className="mb-1 block text-sm font-semibold text-toro-espresso">
-          Full Name
+        <label htmlFor="fullName" className="mb-1 flex items-center gap-2 text-sm font-semibold text-toro-espresso">
+          <UserIcon /> Full Name
         </label>
         <input
           id="fullName"
@@ -80,8 +80,8 @@ export default function SignUpForm({ onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="email" className="mb-1 block text-sm font-semibold text-toro-espresso">
-          Email Address
+        <label htmlFor="email" className="mb-1 flex items-center gap-2 text-sm font-semibold text-toro-espresso">
+          <MailIcon /> Email Address
         </label>
         <input
           id="email"
@@ -103,8 +103,8 @@ export default function SignUpForm({ onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="password" className="mb-1 block text-sm font-semibold text-toro-espresso">
-          Password
+        <label htmlFor="password" className="mb-1 flex items-center gap-2 text-sm font-semibold text-toro-espresso">
+          <LockIcon /> Password
         </label>
         <input
           id="password"
@@ -129,8 +129,8 @@ export default function SignUpForm({ onSubmit }) {
       </div>
 
       <div>
-        <label htmlFor="postalAddress" className="mb-1 block text-sm font-semibold text-toro-espresso">
-          Postal Address
+        <label htmlFor="postalAddress" className="mb-1 flex items-center gap-2 text-sm font-semibold text-toro-espresso">
+          <MapPinIcon /> Postal Address
         </label>
         <textarea
           id="postalAddress"
@@ -158,5 +158,41 @@ export default function SignUpForm({ onSubmit }) {
         Create Account
       </button>
     </form>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-toro-brown">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-toro-brown">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-10 7L2 7" />
+    </svg>
+  );
+}
+
+function LockIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-toro-brown">
+      <rect x="3" y="11" width="18" height="11" rx="2" />
+      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+    </svg>
+  );
+}
+
+function MapPinIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-toro-brown">
+      <path d="M20 10c0 6-12 14-12 14S4 16 4 10a8 8 0 0 1 16 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
   );
 }
