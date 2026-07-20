@@ -170,7 +170,7 @@ export default function About() {
               <button
                 type="button"
                 onClick={() => setActiveYear(item.year)}
-                className={`absolute left-0 top-1 h-4 w-4 -translate-x-[9px] rounded-full transition-all ${
+                className={`absolute left-0 top-1 h-4 w-4 -translate-x-2.25 rounded-full transition-all ${
                   activeYear === item.year ? "bg-toro-clay ring-4 ring-toro-clay/20" : "bg-toro-sand hover:bg-toro-clay"
                 }`}
                 aria-label={`Jump to ${item.year}: ${item.label}`}
