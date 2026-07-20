@@ -11,6 +11,7 @@ import Franchise from "./pages/Franchise.jsx";
 import Cart from "./pages/Cart.jsx";
 import Policy from "./pages/Policy.jsx";
 import Account from "./pages/Account.jsx";
+import SignUp from "./pages/SignUp.jsx";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/shipping" element={<Policy title="Shipping" body="Free delivery on orders over R500. Nationwide shipping within 2–4 business days." />} />
             <Route path="/returns" element={<Policy title="Returns" body="Unopened beans may be returned within 14 days of delivery." />} />
             <Route path="/privacy" element={<Policy title="Privacy Policy" body="We only use your details to fulfil and improve your orders." />} />
