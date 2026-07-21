@@ -1,6 +1,7 @@
 // App entry — defines routes and wraps every page in the shared Header/Footer shell.
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CartProvider } from "./context/CartContext.jsx";
+import { ToastProvider } from "./context/ToastContext.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -11,6 +12,9 @@ import Locations from "./pages/Locations.jsx";
 import Franchise from "./pages/Franchise.jsx";
 import Cart from "./pages/Cart.jsx";
 import Policy from "./pages/Policy.jsx";
+import Account from "./pages/Account.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import Login from "./pages/Login.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -23,9 +27,10 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <div className="flex min-h-screen flex-col">
-        <Header />
+      <CartProvider>
+        <ToastProvider>
+        <div className="flex min-h-screen flex-col">
+          <Header />
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -35,6 +40,9 @@ export default function App() {
             <Route path="/locations" element={<Locations />} />
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
             <Route path="/shipping" element={<Policy title="Shipping" body="Free delivery on orders over R500. Nationwide shipping within 2–4 business days." />} />
             <Route path="/returns" element={<Policy title="Returns" body="Unopened beans may be returned within 14 days of delivery." />} />
             <Route path="/privacy" element={<Policy title="Privacy Policy" body="We only use your details to fulfil and improve your orders." />} />
@@ -43,6 +51,8 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      </ToastProvider>
+      </CartProvider>
     </BrowserRouter>
   );
 }

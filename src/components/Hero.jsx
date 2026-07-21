@@ -5,11 +5,8 @@ import { Link } from "react-router-dom";
 import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
 import hero3 from "../assets/hero3.jpg";
-import hero4 from "../assets/hero4.jpg";
-import hero5 from "../assets/hero5.jpg";
-import hero6 from "../assets/hero6.jpg";
 
-const slides = [hero1, hero2, hero3, hero4, hero5, hero6];
+const slides = [hero1, hero2, hero3];
 const INTERVAL_MS = 3500;
 
 export default function Hero() {

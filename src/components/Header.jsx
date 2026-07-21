@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toroLogo from "../assets/toro-logo.png";
+import { useCart } from "../context/cartConfig.js";
 
 const primaryLinks = [
   { to: "/", label: "Home" },
@@ -15,9 +16,10 @@ const primaryLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { count } = useCart();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-toro-sand bg-toro-cream/95 backdrop-blur bg-transparent rounded-xl">
+    <header className="sticky top-0 z-40 border-b border-toro-sand backdrop-blur bg-transparent rounded-xl">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link to="/" className="flex items-center">
           <img
@@ -65,10 +67,16 @@ export default function Header() {
           >
             <CartIcon />
             <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-toro-clay text-[10px] font-bold text-white">
-              0
+              {count}
             </span>
           </Link>
 
+          <Link
+            to="/login"
+            className="hidden text-sm font-medium text-toro-espresso hover:text-toro-clay md:inline-block"
+          >
+            Sign In
+          </Link>
           <button
             type="button"
             aria-label="Toggle menu"
@@ -106,6 +114,15 @@ export default function Header() {
                 className="block py-2 text-sm font-semibold uppercase tracking-wide text-toro-brown"
               >
                 Business / Franchise
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/login"
+                onClick={() => setMobileOpen(false)}
+                className="block py-2 text-sm font-medium text-toro-espresso"
+              >
+                Sign In
               </NavLink>
             </li>
           </ul>
