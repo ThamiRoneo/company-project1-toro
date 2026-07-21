@@ -1,8 +1,9 @@
 // Shop page — product grid with category, tasting-note filters and sort.
 // State for filter/sort is kept local; the derived list is memoised.
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import ProductGrid from "../components/ProductGrid.jsx";
 import { products, tastingNoteOptions } from "../data/products.js";
+import { useLocation } from "react-router-dom";
 
 const categories = ["All", "Coffee Beans", "Special Release"];
 const sortOptions = [
@@ -16,6 +17,14 @@ export default function Shop() {
   const [category, setCategory] = useState("All");
   const [notes, setNotes] = useState([]);
   const [sort, setSort] = useState("roast");
+  const gridRef = useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.fromAddToCart && gridRef.current) {
+      gridRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, [location.state]);
 
   function toggleNote(note) {
     setNotes((current) =>
@@ -102,7 +111,7 @@ export default function Shop() {
         ))}
       </div>
 
-      <div className="mt-10">
+      <div ref={gridRef} className="mt-10">
         <ProductGrid products={visible} />
       </div>
     </div>
