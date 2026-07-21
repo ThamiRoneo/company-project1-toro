@@ -1,6 +1,7 @@
 // App entry — defines routes and wraps every page in the shared Header/Footer shell.
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext.jsx";
+import { ToastProvider } from "./context/ToastContext.jsx";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <CartProvider>
+        <ToastProvider>
         <div className="flex min-h-screen flex-col">
           <Header />
         <main className="flex-1">
@@ -41,6 +43,7 @@ export default function App() {
         </main>
         <Footer />
       </div>
+      </ToastProvider>
       </CartProvider>
     </BrowserRouter>
   );
