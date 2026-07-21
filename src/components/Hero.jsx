@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
       {slides.map((image, i) => (
         <img
           key={i}
