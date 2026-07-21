@@ -144,7 +144,7 @@ export default function Footer() {
             </Link>
           </div>
         </div>
-        now fix the cart issuenow fix the cart issue
+        
       </div>
     </footer>
   );
