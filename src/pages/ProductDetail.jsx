@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProductById, products } from "../data/products.js";
 import ProductCard from "../components/ProductCard.jsx";
+import { useCart } from "../context/cartConfig.js";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = getProductById(id);
+  const { addToCart } = useCart();
 
   const [sizeIndex, setSizeIndex] = useState(0);
   const [grind, setGrind] = useState(product?.grindOptions[0] ?? "Whole Bean");
@@ -127,6 +129,7 @@ export default function ProductDetail() {
             <button
               type="button"
               disabled={soldOut}
+              onClick={() => !soldOut && addToCart(product, selectedSize.size, grind, quantity)}
               className="min-h-[44px] flex-1 rounded-full bg-toro-clay px-6 py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
             >
               {soldOut ? "Sold Out" : "Add to Cart"}
