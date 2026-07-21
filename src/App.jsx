@@ -1,5 +1,6 @@
 // App entry — defines routes and wraps every page in the shared Header/Footer shell.
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import { CartProvider } from "./context/CartContext.jsx";
 import { ToastProvider } from "./context/ToastContext.jsx";
 import Header from "./components/Header.jsx";
@@ -27,6 +28,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <CartProvider>
         <ToastProvider>
         <div className="flex min-h-screen flex-col">
