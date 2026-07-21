@@ -1,6 +1,6 @@
 // Product detail page — image, metadata, tasting notes, size + grind selectors,
 // quantity stepper, reviews, and a related-products carousel placeholder.
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useParams, Link } from "react-router-dom";
 import { getProductById, products } from "../data/products.js";
@@ -18,6 +18,10 @@ export default function ProductDetail() {
   const [sizeIndex, setSizeIndex] = useState(0);
   const [grind, setGrind] = useState(product?.grindOptions[0] ?? "Whole Bean");
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!product) {
     return (
@@ -39,7 +43,7 @@ export default function ProductDetail() {
     if (soldOut) return;
     addToCart(product, selectedSize.size, grind, quantity);
     showToast(`${product.name} added to cart`);
-    navigate("/shop");
+    navigate("/shop", { state: { fromAddToCart: true } });
   }
 
   return (
