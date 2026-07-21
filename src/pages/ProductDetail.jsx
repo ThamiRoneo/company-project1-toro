@@ -43,7 +43,7 @@ export default function ProductDetail() {
   }
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 animate-fade-in-up">
       <nav className="mb-4 text-sm text-toro-brown" aria-label="Breadcrumb">
         <Link to="/shop" className="hover:underline">Shop</Link>
         <span className="mx-2">/</span>
