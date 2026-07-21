@@ -5,7 +5,7 @@ import hero2 from "../assets/hero2.jpg";
 
 export default function Hero() {
   return (
-    <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
       <img
         src={hero2}
         alt=""
@@ -13,7 +13,7 @@ export default function Hero() {
         className="absolute inset-0 h-full w-full object-cover opacity-50"
       />
 
-      <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
+      <div className="relative z-15 mx-auto max-w-3xl px-4 text-center">
         <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">
           Artisan Coffee Beans
         </h1>
