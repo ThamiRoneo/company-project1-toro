@@ -2,8 +2,6 @@
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { LOCATIONS, LOCATION_HEADING, LOCATION_SUBHEADING } from "../data/LocationsData.js";
-import LocationCard from "../components/LocationCard.jsx";
 import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [
@@ -79,10 +77,8 @@ export default function About() {
   const [activeYear, setActiveYear] = useState("2014");
   const [storyInView, setStoryInView] = useState(false);
   const [statsInView, setStatsInView] = useState(false);
-  const [locationsInView, setLocationsInView] = useState(false);
   const storyRef = useRef(null);
   const statsRef = useRef(null);
-  const locationsRef = useRef(null);
   const active = TIMELINE.find((item) => item.year === activeYear) ?? TIMELINE[0];
 
   useEffect(() => {
@@ -110,20 +106,6 @@ export default function About() {
       { threshold: 0.4 }
     );
     if (statsRef.current) observer.observe(statsRef.current);
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setLocationsInView(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.15 }
-    );
-    if (locationsRef.current) observer.observe(locationsRef.current);
     return () => observer.disconnect();
   }, []);
 
