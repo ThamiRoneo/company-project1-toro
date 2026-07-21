@@ -1,5 +1,6 @@
 // App entry — defines routes and wraps every page in the shared Header/Footer shell.
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
 import Home from "./pages/Home.jsx";
@@ -11,9 +12,18 @@ import Franchise from "./pages/Franchise.jsx";
 import Cart from "./pages/Cart.jsx";
 import Policy from "./pages/Policy.jsx";
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">
