@@ -1,8 +1,7 @@
 // Product card used in the shop grid.
 // Renders name, origin, price and status tag. Out-of-stock products show a
 // disabled "Sold Out" state instead of an active Add to Cart (no false affordance).
-import { Link, useNavigate } from "react-router-dom";
-import { useCart } from "../context/cartConfig.js";
+import { Link } from "react-router-dom";
 
 const statusStyles = {
   Special: "bg-toro-clay text-white",
@@ -12,15 +11,6 @@ const statusStyles = {
 
 export default function ProductCard({ product }) {
   const soldOut = product.sizes.every((variant) => variant.stock === 0);
-  const { addToCart } = useCart();
-  const navigate = useNavigate();
-
-  function handleAddToCart() {
-    const firstAvailable = product.sizes.find((s) => s.stock > 0);
-    if (!firstAvailable) return;
-    addToCart(product, firstAvailable.size, product.grindOptions[0], 1);
-    navigate("/cart");
-  }
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-toro border border-toro-sand bg-white">
@@ -57,13 +47,12 @@ export default function ProductCard({ product }) {
               Sold Out
             </span>
           ) : (
-            <button
-              type="button"
-              onClick={handleAddToCart}
+            <Link
+              to={`/product/${product.id}`}
               className="rounded-full bg-toro-brown px-3 py-1 text-sm font-semibold text-toro-cream hover:bg-toro-espresso"
             >
               Add to Cart
-            </button>
+            </Link>
           )}
         </div>
       </div>
