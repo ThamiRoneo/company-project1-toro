@@ -2,12 +2,6 @@
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  LOCATIONS,
-  LOCATION_HEADING,
-  LOCATION_SUBHEADING,
-} from "../data/LocationsData.js";
-import LocationCard from "../components/LocationCard.jsx";
 import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [

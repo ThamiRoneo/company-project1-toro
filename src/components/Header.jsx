@@ -3,7 +3,7 @@
 // "Business" tab for franchise enquiries, search entry, and a persistent
 // mini-cart indicator. Collapses to a hamburger drawer below md.
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import toroLogo from "../assets/toro-logo.png";
 import { useCart } from "../context/cartConfig.js";
 
@@ -16,7 +16,19 @@ const primaryLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const { count } = useCart();
+  const navigate = useNavigate();
+
+  function handleSearchSubmit(event) {
+    event.preventDefault();
+    const trimmed = searchQuery.trim();
+    if (!trimmed) return;
+    setSearchOpen(false);
+    setSearchQuery("");
+    navigate(`/shop?search=${encodeURIComponent(trimmed)}`);
+  }
 
   return (
     <header className="sticky top-0 z-40 border-b border-toro-sand backdrop-blur bg-transparent rounded-xl">
@@ -56,10 +68,24 @@ export default function Header() {
           <button
             type="button"
             aria-label="Search products"
+            onClick={() => setSearchOpen((open) => !open)}
             className="rounded-full p-2 text-toro-espresso hover:bg-toro-sand"
           >
             <SearchIcon />
           </button>
+          {searchOpen && (
+            <form onSubmit={handleSearchSubmit} className="hidden md:flex items-center gap-2">
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder="Search coffee..."
+                aria-label="Search products"
+                autoFocus
+                className="rounded-md border border-toro-sand bg-white px-3 py-1.5 text-sm text-toro-espresso placeholder:text-toro-brown focus:border-toro-brown focus:outline-none focus:ring-2 focus:ring-toro-brown/30"
+              />
+            </form>
+          )}
           <Link
             to="/cart"
             aria-label="Open cart"
