@@ -1,17 +1,27 @@
 // Product detail page — image, metadata, tasting notes, size + grind selectors,
 // quantity stepper, reviews, and a related-products carousel placeholder.
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useParams, Link } from "react-router-dom";
 import { getProductById, products } from "../data/products.js";
 import ProductCard from "../components/ProductCard.jsx";
+import { useCart } from "../context/cartConfig.js";
+import { useToast } from "../context/toastConfig.js";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const product = getProductById(id);
+  const { addToCart } = useCart();
+  const { showToast } = useToast();
+  const navigate = useNavigate();
 
   const [sizeIndex, setSizeIndex] = useState(0);
   const [grind, setGrind] = useState(product?.grindOptions[0] ?? "Whole Bean");
   const [quantity, setQuantity] = useState(1);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!product) {
     return (
@@ -29,8 +39,15 @@ export default function ProductDetail() {
 
   const related = products.filter((item) => item.id !== product.id).slice(0, 3);
 
+  function handleAddToCart() {
+    if (soldOut) return;
+    addToCart(product, selectedSize.size, grind, quantity);
+    showToast(`${product.name} added to cart`);
+    navigate("/shop", { state: { fromAddToCart: true } });
+  }
+
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 animate-fade-in-up">
       <nav className="mb-4 text-sm text-toro-brown" aria-label="Breadcrumb">
         <Link to="/shop" className="hover:underline">Shop</Link>
         <span className="mx-2">/</span>
@@ -127,6 +144,7 @@ export default function ProductDetail() {
             <button
               type="button"
               disabled={soldOut}
+              onClick={handleAddToCart}
               className="min-h-[44px] flex-1 rounded-full bg-toro-clay px-6 py-3 font-semibold text-white disabled:cursor-not-allowed disabled:opacity-40"
             >
               {soldOut ? "Sold Out" : "Add to Cart"}

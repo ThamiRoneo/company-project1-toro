@@ -24,30 +24,68 @@ export default function Footer() {
             Premium artisan coffee beans, expertly roasted and delivered fresh.
           </p>
           <div className="mt-4 flex items-center gap-3">
-            <a href="https://facebook.com" target="_blank" rel="noreferrer noopener" aria-label="Facebook" className="text-toro-sand hover:text-toro-cream">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Facebook"
+              className="text-toro-sand hover:text-toro-cream"
+            >
               <FacebookIcon />
             </a>
-            <a href="https://instagram.com/toro.community" target="_blank" rel="noreferrer noopener" aria-label="Instagram" className="text-toro-sand hover:text-toro-cream">
+            <a
+              href="https://instagram.com/toro.community"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Instagram"
+              className="text-toro-sand hover:text-toro-cream"
+            >
               <InstagramIcon />
             </a>
-            <a href="https://x.com" target="_blank" rel="noreferrer noopener" aria-label="X (Twitter)" className="text-toro-sand hover:text-toro-cream">
+            <a
+              href="https://x.com"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="X (Twitter)"
+              className="text-toro-sand hover:text-toro-cream"
+            >
               <XIcon />
             </a>
           </div>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide">Quick Links</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wide">
+            Quick Links
+          </h3>
           <ul className="mt-3 space-y-2 text-sm text-toro-sand">
-            <li><Link to="/shop" className="hover:text-toro-cream">Shop Coffee</Link></li>
-            <li><Link to="/about" className="hover:text-toro-cream">Our Story</Link></li>
-            <li><Link to="/locations" className="hover:text-toro-cream">Locations</Link></li>
-            <li><Link to="/franchise" className="hover:text-toro-cream">Franchise</Link></li>
+            <li>
+              <Link to="/shop" className="hover:text-toro-cream">
+                Shop Coffee
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="hover:text-toro-cream">
+                Our Story
+              </Link>
+            </li>
+            <li>
+              <Link to="/locations" className="hover:text-toro-cream">
+                Locations
+              </Link>
+            </li>
+            <li>
+              <Link to="/franchise" className="hover:text-toro-cream">
+                Franchise
+              </Link>
+            </li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide">Contact</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wide">
+            Contact
+          </h3>
           <address className="mt-3 space-y-2 text-sm not-italic text-toro-sand">
             <p>99 Mollen St, Potchefstrooom</p>
             <p>+27 72 470 1971</p>
@@ -56,11 +94,18 @@ export default function Footer() {
         </div>
 
         <div>
-          <h3 className="text-sm font-semibold uppercase tracking-wide">Newsletter</h3>
+          <h3 className="text-sm font-semibold uppercase tracking-wide">
+            Newsletter
+          </h3>
           {subscribed ? (
-            <p className="mt-3 text-sm text-toro-clay">Thanks for subscribing!</p>
+            <p className="mt-3 text-sm text-toro-clay">
+              Thanks for subscribing!
+            </p>
           ) : (
-            <form onSubmit={handleSubscribe} className="mt-3 flex flex-col gap-2">
+            <form
+              onSubmit={handleSubscribe}
+              className="mt-3 flex flex-col gap-2"
+            >
               <input
                 type="email"
                 required
@@ -85,12 +130,21 @@ export default function Footer() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-toro-sand sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>© {new Date().getFullYear()} Toro Coffee. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link to="/shipping" className="hover:text-toro-cream">Shipping</Link>
-            <Link to="/returns" className="hover:text-toro-cream">Returns</Link>
-            <Link to="/privacy" className="hover:text-toro-cream">Privacy</Link>
-            <Link to="/terms" className="hover:text-toro-cream">Terms</Link>
+            <Link to="/shipping" className="hover:text-toro-cream">
+              Shipping
+            </Link>
+            <Link to="/returns" className="hover:text-toro-cream">
+              Returns
+            </Link>
+            <Link to="/privacy" className="hover:text-toro-cream">
+              Privacy
+            </Link>
+            <Link to="/terms" className="hover:text-toro-cream">
+              Terms
+            </Link>
           </div>
         </div>
+        now fix the cart issuenow fix the cart issue
       </div>
     </footer>
   );
@@ -98,7 +152,13 @@ export default function Footer() {
 
 function FacebookIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
     </svg>
   );
@@ -106,7 +166,15 @@ function FacebookIcon() {
 
 function InstagramIcon() {
   return (
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
       <rect x="2" y="2" width="20" height="20" rx="5" />
       <circle cx="12" cy="12" r="5" />
       <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
@@ -116,7 +184,13 @@ function InstagramIcon() {
 
 function XIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );

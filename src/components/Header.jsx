@@ -5,6 +5,7 @@
 import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import toroLogo from "../assets/toro-logo.png";
+import { useCart } from "../context/cartConfig.js";
 
 const primaryLinks = [
   { to: "/", label: "Home" },
@@ -15,6 +16,7 @@ const primaryLinks = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { count } = useCart();
 
   return (
     <header className="sticky top-0 z-40 border-b border-toro-sand backdrop-blur bg-transparent rounded-xl">
@@ -65,7 +67,7 @@ export default function Header() {
           >
             <CartIcon />
             <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-toro-clay text-[10px] font-bold text-white">
-              0
+              {count}
             </span>
           </Link>
 
