@@ -2,6 +2,12 @@
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  LOCATIONS,
+  LOCATION_HEADING,
+  LOCATION_SUBHEADING,
+} from "../data/LocationsData.js";
+import LocationCard from "../components/LocationCard.jsx";
 import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [
@@ -68,7 +74,8 @@ function AnimatedCounter({ value, suffix, trigger }) {
 
   return (
     <span className="font-display text-4xl font-bold text-toro-clay">
-      {count}{suffix}
+      {count}
+      {suffix}
     </span>
   );
 }
@@ -79,7 +86,8 @@ export default function About() {
   const [statsInView, setStatsInView] = useState(false);
   const storyRef = useRef(null);
   const statsRef = useRef(null);
-  const active = TIMELINE.find((item) => item.year === activeYear) ?? TIMELINE[0];
+  const active =
+    TIMELINE.find((item) => item.year === activeYear) ?? TIMELINE[0];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -89,7 +97,7 @@ export default function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.2 },
     );
     if (storyRef.current) observer.observe(storyRef.current);
     return () => observer.disconnect();
@@ -103,7 +111,7 @@ export default function About() {
           observer.disconnect();
         }
       },
-      { threshold: 0.4 }
+      { threshold: 0.4 },
     );
     if (statsRef.current) observer.observe(statsRef.current);
     return () => observer.disconnect();
@@ -120,9 +128,12 @@ export default function About() {
           className="absolute inset-0 h-full w-full object-cover opacity-50"
         />
         <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6">
-          <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">The Toro Story</h1>
+          <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">
+            The Toro Story
+          </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-toro-sand">
-            From Dream to Cup — bringing exceptional specialty coffee into everyday life.
+            From Dream to Cup — bringing exceptional specialty coffee into
+            everyday life.
           </p>
         </div>
       </section>
@@ -130,8 +141,10 @@ export default function About() {
       {/* Intro */}
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <p className="text-center text-lg text-toro-espresso">
-          Toro began with a simple but bold dream: to bring exceptional specialty coffee into everyday life.
-          Not just coffee for cafes, but coffee for people—for conversations, community, and moments that matter.
+          Toro began with a simple but bold dream: to bring exceptional
+          specialty coffee into everyday life. Not just coffee for cafes, but
+          coffee for people—for conversations, community, and moments that
+          matter.
         </p>
       </section>
 
@@ -159,9 +172,15 @@ export default function About() {
           key={activeYear}
           className="mt-8 rounded-toro border border-toro-sand bg-white p-6 shadow-sm transition-all sm:p-10"
         >
-          <p className="text-sm font-semibold uppercase tracking-wide text-toro-clay">{active.label}</p>
-          <h2 className="mt-2 font-display text-2xl font-bold text-toro-espresso sm:text-3xl">{active.title}</h2>
-          <p className="mt-4 text-base leading-relaxed text-toro-espresso">{active.body}</p>
+          <p className="text-sm font-semibold uppercase tracking-wide text-toro-clay">
+            {active.label}
+          </p>
+          <h2 className="mt-2 font-display text-2xl font-bold text-toro-espresso sm:text-3xl">
+            {active.title}
+          </h2>
+          <p className="mt-4 text-base leading-relaxed text-toro-espresso">
+            {active.body}
+          </p>
         </div>
 
         <ol className="mx-auto mt-10 max-w-3xl border-l-2 border-toro-sand">
@@ -171,11 +190,15 @@ export default function About() {
                 type="button"
                 onClick={() => setActiveYear(item.year)}
                 className={`absolute left-0 top-1 h-4 w-4 -translate-x-[9px] rounded-full transition-all ${
-                  activeYear === item.year ? "bg-toro-clay ring-4 ring-toro-clay/20" : "bg-toro-sand hover:bg-toro-clay"
+                  activeYear === item.year
+                    ? "bg-toro-clay ring-4 ring-toro-clay/20"
+                    : "bg-toro-sand hover:bg-toro-clay"
                 }`}
                 aria-label={`Jump to ${item.year}: ${item.label}`}
               />
-              <p className="font-display text-lg font-semibold text-toro-brown">{item.year} — {item.label}</p>
+              <p className="font-display text-lg font-semibold text-toro-brown">
+                {item.year} — {item.label}
+              </p>
               <p className="text-sm text-toro-espresso">{item.title}</p>
             </li>
           ))}
@@ -184,8 +207,12 @@ export default function About() {
 
       {/* Roasting story */}
       <section ref={storyRef} className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-        <div className={`rounded-toro border border-toro-sand bg-toro-sand/50 p-6 transition-all duration-700 ${storyInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-          <h2 className="font-display text-2xl font-bold text-toro-espresso">{ROASTING_STORY.title}</h2>
+        <div
+          className={`rounded-toro border border-toro-sand bg-toro-sand/50 p-6 transition-all duration-700 ${storyInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
+        >
+          <h2 className="font-display text-2xl font-bold text-toro-espresso">
+            {ROASTING_STORY.title}
+          </h2>
           <p className="mt-3 text-toro-espresso">{ROASTING_STORY.body}</p>
         </div>
       </section>
@@ -197,30 +224,14 @@ export default function About() {
             <div
               key={stat.label}
               className={`rounded-toro border border-toro-sand bg-white p-6 text-center transition-all duration-700 ${
-                statsInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                statsInView
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
               }`}
             >
               <AnimatedCounter {...stat} trigger={statsInView} />
               <p className="mt-2 text-sm text-toro-brown">{stat.label}</p>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Locations */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <div className="text-center">
-          <h2 className="font-display text-3xl font-bold text-toro-espresso sm:text-4xl">{LOCATION_HEADING}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-toro-brown">{LOCATION_SUBHEADING}</p>
-        </div>
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {LOCATIONS.map((location, index) => (
-            <LocationCard
-              key={location.id}
-              location={location}
-              inView={true}
-              delay={index * 120}
-            />
           ))}
         </div>
       </section>
