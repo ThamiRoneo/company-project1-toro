@@ -1,37 +1,17 @@
-// Homepage hero — image carousel background that loops continuously,
-// single primary CTA plus one lower-commitment secondary CTA, and a trust strip.
-import { useEffect, useState } from "react";
+// Homepage hero — static background image, single primary CTA plus one
+// lower-commitment secondary CTA, and a trust strip.
 import { Link } from "react-router-dom";
-import hero1 from "../assets/hero1.jpg";
 import hero2 from "../assets/hero2.jpg";
-import hero3 from "../assets/hero3.jpg";
-
-const slides = [hero1, hero2, hero3];
-const INTERVAL_MS = 3500;
 
 export default function Hero() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((current) => (current + 1) % slides.length);
-    }, INTERVAL_MS);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
-      {slides.map((image, i) => (
-        <img
-          key={i}
-          src={image}
-          alt=""
-          aria-hidden={i !== index}
-          className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${
-            i === index ? "opacity-100" : "opacity-0"
-          }`}
-        />
-      ))}
+    <section className="relative flex min-h-[100vh] items-center justify-center overflow-hidden bg-toro-espresso text-toro-cream">
+      <img
+        src={hero2}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-50"
+      />
 
       <div className="relative z-10 mx-auto max-w-3xl px-4 text-center">
         <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">
