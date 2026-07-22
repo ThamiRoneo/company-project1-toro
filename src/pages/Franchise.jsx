@@ -223,7 +223,9 @@ export default function Franchise() {
               name="investmentRange"
               className="flex-1 p-2 rounded border"
             >
-              <option>R500,000 - R1,000,000</option>
+              <option>Select Range</option>
+              <option>R500,000 - R750,000</option>
+              <option>R750,000 - R1,000,000</option>
               <option>R1,000,000 - R1,500,000</option>
               <option>Other</option>
             </select>
@@ -232,7 +234,8 @@ export default function Franchise() {
             <MessageIcon />
             <textarea
               name="about"
-              placeholder="Tell us about yourself"
+              placeholder="Tell us about yourself...
+i.e. Share your experiences, goals, and why you want to franchise us."
               className="flex-1 p-2 rounded border"
             />
           </div>
