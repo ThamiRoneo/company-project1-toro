@@ -28,7 +28,7 @@ export default function Franchise() {
       </header>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <div className="bg-white/40 p-4 rounded-lg">
+        <div className="bg-white/40 p-8 rounded-lg">
           <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso border-b border-toro-sand p-3">
             Why Franchise with Us?
           </h2>
@@ -56,7 +56,7 @@ export default function Franchise() {
           </ul>
         </div>
 
-        <div className="bg-white/40 p-4 rounded-lg">
+        <div className="bg-white/40 p-8 rounded-lg">
           <h2 className="font-display font-semibold border-b border-toro-sand p-3 text-center text-2xl text-toro-espresso">
             What We Provide
           </h2>
@@ -98,21 +98,31 @@ export default function Franchise() {
           Franchise Requirements
         </h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
-          <div className="bg-toro-sand/40 p-4 rounded-lg">
-            <h3 className="font-bold border-b p-2 text-center">
+          <div className="bg-toro-sand/40 p-5 rounded-lg">
+            <h3 className="font-display font-bold border-b p-2 text-center">
               Financial Requirements
             </h3>
             <ul className="mt-2 list-inside list-disc text-toro-brown">
-              <li>Initial Investment: R500,000 - R1,500,000</li>
-              <li>Franchise Fee: R150,000</li>
-              <li>Royalty Fee: 5% of gross sales</li>
-              <li>Marketing Fee: 2% of gross sales</li>
-              <li>Liquid Capital Required: R300,000</li>
+              <li>
+                <strong>Initial Investment:</strong> R500,000 - R1,500,000
+              </li>
+              <li>
+                <strong>Franchise Fee:</strong> R150,000
+              </li>
+              <li>
+                <strong>Royalty Fee:</strong> 5% of gross sales
+              </li>
+              <li>
+                <strong>Marketing Fee:</strong> 2% of gross sales
+              </li>
+              <li>
+                <strong>Liquid Capital Required:</strong> R300,000
+              </li>
             </ul>
           </div>
 
-          <div className="bg-toro-sand/40 p-4 rounded-lg">
-            <h3 className="font-bold border-b p-2 text-center">
+          <div className="bg-toro-sand/40 p-5 rounded-lg">
+            <h3 className="font-display font-bold border-b p-2 text-center">
               Personal Requirements
             </h3>
             <ul className="mt-2 list-inside list-disc text-toro-brown">
@@ -127,7 +137,7 @@ export default function Franchise() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-display font-semibold text-2xl text-toro-espresso">
+        <h2 className="font-display font-semibold border-t border-toro-sand pt-6 pb-2 text-2xl text-center text-toro-espresso">
           How to Get Started
         </h2>
         <ol className="mt-4 list-decimal list-inside space-y-3 text-toro-brown">
@@ -166,36 +176,57 @@ export default function Franchise() {
         </p>
 
         <form className="mt-4 grid gap-3 md:grid-cols-2">
-          <input
-            name="fullName"
-            placeholder="Full Name"
-            className="p-2 rounded border"
-          />
-          <input
-            name="email"
-            placeholder="Email"
-            className="p-2 rounded border"
-          />
-          <input
-            name="phone"
-            placeholder="Phone"
-            className="p-2 rounded border"
-          />
-          <input
-            name="location"
-            placeholder="Preferred Location"
-            className="p-2 rounded border"
-          />
-          <select name="investmentRange" className="p-2 rounded border">
-            <option>R500,000 - R1,000,000</option>
-            <option>R1,000,000 - R1,500,000</option>
-            <option>Other</option>
-          </select>
-          <textarea
-            name="about"
-            placeholder="Tell us about yourself"
-            className="p-2 rounded border md:col-span-2"
-          />
+          <div className="flex items-center gap-2">
+            <UserIcon />
+            <input
+              name="fullName"
+              placeholder="Full Name"
+              className="flex-1 p-2 rounded border"
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <MailIcon />
+            <input
+              name="email"
+              placeholder="Email"
+              className="flex-1 p-2 rounded border"
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <PhoneIcon />
+            <input
+              name="phone"
+              placeholder="Phone"
+              className="flex-1 p-2 rounded border"
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <MapPinIcon />
+            <input
+              name="location"
+              placeholder="Preferred Location"
+              className="flex-1 p-2 rounded border"
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <BriefcaseIcon />
+            <select
+              name="investmentRange"
+              className="flex-1 p-2 rounded border"
+            >
+              <option>R500,000 - R1,000,000</option>
+              <option>R1,000,000 - R1,500,000</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div className="flex items-center gap-2 md:col-span-2">
+            <MessageIcon />
+            <textarea
+              name="about"
+              placeholder="Tell us about yourself"
+              className="flex-1 p-2 rounded border"
+            />
+          </div>
 
           <button
             type="submit"
@@ -211,5 +242,57 @@ export default function Franchise() {
         </p>
       </section>
     </div>
+  );
+}
+
+function UserIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+      <circle cx="12" cy="7" r="4" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-10 7L2 7" />
+    </svg>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    </svg>
+  );
+}
+
+function MapPinIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <path d="M20 10c0 6-12 14-12 14S4 16 4 10a8 8 0 0 1 16 0z" />
+      <circle cx="12" cy="10" r="3" />
+    </svg>
+  );
+}
+
+function BriefcaseIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <rect x="2" y="7" width="20" height="14" rx="2" />
+      <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+    </svg>
+  );
+}
+
+function MessageIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
   );
 }
