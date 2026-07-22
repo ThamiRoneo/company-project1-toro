@@ -1,4 +1,4 @@
-// Franchise page — content adapted from torocoffee.co.za/franchise.php
+// Franchise page — content adapted from torocoffee.co.za/franchise.
 export default function Franchise() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
@@ -27,9 +27,9 @@ export default function Franchise() {
       </header>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <div>
-          <h2 className="font-semibold text-2xl text-toro-espresso">
-            Why Franchise with Us
+        <div className="bg-white/40 p-4 rounded-lg">
+          <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso border-b border-toro-sand p-3">
+            Why Franchise with Us?
           </h2>
           <p className="mt-3 text-toro-espresso">
             We combine premium products with exceptional customer service —
@@ -55,34 +55,34 @@ export default function Franchise() {
           </ul>
         </div>
 
-        <div>
-          <h2 className="font-semibold text-2xl text-toro-espresso">
+        <div className="bg-white/40 p-4 rounded-lg">
+          <h2 className="font-display font-semibold border-b border-toro-sand p-3 text-center text-2xl text-toro-espresso">
             What We Provide
           </h2>
           <div className="mt-3 space-y-4 text-toro-brown">
             <div>
-              <h3 className="font-medium">Training & Development</h3>
+              <h3 className="font-bold">Training & Development</h3>
               <p className="mt-1">
                 4-week comprehensive training covering coffee, customer service,
                 operations and systems.
               </p>
             </div>
             <div>
-              <h3 className="font-medium">Site Selection & Setup</h3>
+              <h3 className="font-bold">Site Selection & Setup</h3>
               <p className="mt-1">
                 Assistance with location selection, lease negotiation, store
                 design and complete setup including equipment.
               </p>
             </div>
             <div>
-              <h3 className="font-medium">Marketing & Branding</h3>
+              <h3 className="font-bold">Marketing & Branding</h3>
               <p className="mt-1">
                 National marketing, social support, promotional materials and
                 local store marketing guidance.
               </p>
             </div>
             <div>
-              <h3 className="font-medium">Supply Chain & Products</h3>
+              <h3 className="font-bold">Supply Chain & Products</h3>
               <p className="mt-1">
                 Access to our premium beans, equipment and supplies with
                 reliable deliveries.
@@ -93,7 +93,7 @@ export default function Franchise() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-semibold text-2xl text-toro-espresso">
+        <h2 className="font-display font-bold text-2xl text-center border-t pt-6 border-toro-sand text-toro-espresso">
           Franchise Requirements
         </h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
@@ -108,7 +108,7 @@ export default function Franchise() {
             </ul>
           </div>
 
-          <div className="p-4 rounded-lg">
+          <div className="bg-toro-sand/40 p-4 rounded-lg">
             <h3 className="font-medium">Personal Requirements</h3>
             <ul className="mt-2 list-inside list-disc text-toro-brown">
               <li>Passion for coffee and customer service</li>
@@ -122,7 +122,7 @@ export default function Franchise() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-semibold text-2xl text-toro-espresso">
+        <h2 className="font-display font-semibold text-2xl text-toro-espresso">
           How to Get Started
         </h2>
         <ol className="mt-4 list-decimal list-inside space-y-3 text-toro-brown">
@@ -152,7 +152,7 @@ export default function Franchise() {
         id="inquiry"
         className="mt-12 bg-white/60 p-6 rounded-lg shadow-sm"
       >
-        <h2 className="font-semibold text-2xl text-toro-espresso">
+        <h2 className="font-display font-semibold text-2xl text-toro-espresso">
           Franchise Inquiry Form
         </h2>
         <p className="mt-2 text-sm text-toro-brown">
