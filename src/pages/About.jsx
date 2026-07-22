@@ -2,6 +2,12 @@
 // a clickable year navigator, and animated counters.
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import {
+  LOCATIONS,
+  LOCATION_HEADING,
+  LOCATION_SUBHEADING,
+} from "../data/LocationsData.js";
+import LocationCard from "../components/LocationCard.jsx";
 import aboutHero from "../assets/about-us.jpg";
 
 const TIMELINE = [
@@ -226,6 +232,24 @@ export default function About() {
               <AnimatedCounter {...stat} trigger={statsInView} />
               <p className="mt-2 text-sm text-toro-brown">{stat.label}</p>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Locations */}
+      <section className="mx-auto max-w-8xl px-4 py-16 sm:px-6">
+        <div className="text-center">
+          <h2 className="font-display text-3xl font-bold text-toro-espresso sm:text-4xl">{LOCATION_HEADING}</h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-toro-brown">{LOCATION_SUBHEADING}</p>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {LOCATIONS.map((location, index) => (
+            <LocationCard
+              key={location.id}
+              location={location}
+              inView={true}
+              delay={index * 120}
+            />
           ))}
         </div>
       </section>
