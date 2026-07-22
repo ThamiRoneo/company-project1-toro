@@ -8,7 +8,8 @@ export default function Franchise() {
         </h1>
         <p className="mt-3 text-lg text-toro-brown">
           Join our growing family of coffee entrepreneurs and build a profitable
-          business with Toro's proven system.
+          business with Toro's proven system, premium products, and
+          comprehensive support.
         </p>
         <div className="mt-6 flex justify-center gap-3">
           <a
@@ -93,12 +94,14 @@ export default function Franchise() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-display font-bold text-2xl text-center border-t pt-6 border-toro-sand text-toro-espresso">
+        <h2 className="font-display font-bold text-2xl text-center border-t pt-6 pb-2 border-toro-sand text-toro-espresso">
           Franchise Requirements
         </h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
           <div className="bg-toro-sand/40 p-4 rounded-lg">
-            <h3 className="font-medium">Financial Requirements</h3>
+            <h3 className="font-bold border-b p-2 text-center">
+              Financial Requirements
+            </h3>
             <ul className="mt-2 list-inside list-disc text-toro-brown">
               <li>Initial Investment: R500,000 - R1,500,000</li>
               <li>Franchise Fee: R150,000</li>
@@ -109,7 +112,9 @@ export default function Franchise() {
           </div>
 
           <div className="bg-toro-sand/40 p-4 rounded-lg">
-            <h3 className="font-medium">Personal Requirements</h3>
+            <h3 className="font-bold border-b p-2 text-center">
+              Personal Requirements
+            </h3>
             <ul className="mt-2 list-inside list-disc text-toro-brown">
               <li>Passion for coffee and customer service</li>
               <li>Strong business and leadership skills</li>
@@ -152,10 +157,10 @@ export default function Franchise() {
         id="inquiry"
         className="mt-12 bg-white/60 p-6 rounded-lg shadow-sm"
       >
-        <h2 className="font-display font-semibold text-2xl text-toro-espresso">
+        <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso">
           Franchise Inquiry Form
         </h2>
-        <p className="mt-2 text-sm text-toro-brown">
+        <p className="mt-2 text-sm text-center text-toro-brown">
           Fill out the form below and our franchise team will contact you within
           24-48 hours.
         </p>
@@ -164,24 +169,24 @@ export default function Franchise() {
           <input
             name="fullName"
             placeholder="Full Name"
-            className="p-3 rounded border"
+            className="p-2 rounded border"
           />
           <input
             name="email"
-            placeholder="Email Address"
-            className="p-3 rounded border"
+            placeholder="Email"
+            className="p-2 rounded border"
           />
           <input
             name="phone"
-            placeholder="Phone Number"
-            className="p-3 rounded border"
+            placeholder="Phone"
+            className="p-2 rounded border"
           />
           <input
             name="location"
             placeholder="Preferred Location"
-            className="p-3 rounded border"
+            className="p-2 rounded border"
           />
-          <select name="investmentRange" className="p-3 rounded border">
+          <select name="investmentRange" className="p-2 rounded border">
             <option>R500,000 - R1,000,000</option>
             <option>R1,000,000 - R1,500,000</option>
             <option>Other</option>
@@ -189,7 +194,7 @@ export default function Franchise() {
           <textarea
             name="about"
             placeholder="Tell us about yourself"
-            className="p-3 rounded border md:col-span-2"
+            className="p-2 rounded border md:col-span-2"
           />
 
           <button
