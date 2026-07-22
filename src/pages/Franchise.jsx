@@ -1,29 +1,38 @@
 // Franchise page — content adapted from torocoffee.co.za/franchise.
+import hero1 from "../assets/hero1.jpg";
 export default function Franchise() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <header className="mb-8 text-center">
-        <h1 className="font-display text-4xl font-bold text-toro-espresso">
-          Franchise Opportunities
-        </h1>
-        <p className="mt-3 text-lg text-toro-brown">
-          Join our growing family of coffee entrepreneurs and build a profitable
-          business with Toro's proven system, premium products, and
-          comprehensive support.
-        </p>
-        <div className="mt-6 flex justify-center gap-3">
-          <a
-            href="mailto:franchise@torocoffee.co.za"
-            className="rounded-full bg-toro-brown px-6 py-3 font-semibold text-toro-cream hover:bg-toro-espresso"
-          >
-            Apply Now
-          </a>
-          <a
-            href="#inquiry"
-            className="rounded-full border border-toro-brown px-6 py-3 font-semibold text-toro-brown hover:bg-toro-sand"
-          >
-            Franchise Inquiry
-          </a>
+      <header className="relative overflow-hidden rounded-toro mb-8 text-center">
+        <img
+          src={hero1}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-80"
+        />
+        <div className="relative z-10 py-12">
+          <h1 className="font-display text-4xl font-bold text-white">
+            Franchise Opportunities
+          </h1>
+          <p className="mt-3 text-lg text-white/98">
+            Join our growing family of coffee entrepreneurs and build a
+            profitable business with Toro's proven system, premium products, and
+            comprehensive support.
+          </p>
+          <div className="mt-6 flex justify-center gap-3">
+            <a
+              href="mailto:franchise@torocoffee.co.za"
+              className="rounded-full bg-toro-brown px-6 py-3 font-semibold text-toro-cream hover:bg-toro-espresso"
+            >
+              Apply Now
+            </a>
+            <a
+              href="#inquiry"
+              className="rounded-full border border-toro-brown px-6 py-3 font-semibold text-toro-brown bg-toro-cream/60 hover:bg-toro-sand"
+            >
+              Franchise Inquiry
+            </a>
+          </div>
         </div>
       </header>
 
@@ -247,7 +256,15 @@ export default function Franchise() {
 
 function UserIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
       <circle cx="12" cy="7" r="4" />
     </svg>
@@ -256,7 +273,15 @@ function UserIcon() {
 
 function MailIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <rect x="2" y="4" width="20" height="16" rx="2" />
       <path d="m22 7-10 7L2 7" />
     </svg>
@@ -265,7 +290,15 @@ function MailIcon() {
 
 function PhoneIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   );
@@ -273,7 +306,15 @@ function PhoneIcon() {
 
 function MapPinIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <path d="M20 10c0 6-12 14-12 14S4 16 4 10a8 8 0 0 1 16 0z" />
       <circle cx="12" cy="10" r="3" />
     </svg>
@@ -282,7 +323,15 @@ function MapPinIcon() {
 
 function BriefcaseIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <rect x="2" y="7" width="20" height="14" rx="2" />
       <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
     </svg>
@@ -291,7 +340,15 @@ function BriefcaseIcon() {
 
 function MessageIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-toro-brown">
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      className="shrink-0 text-toro-brown"
+    >
       <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
   );
