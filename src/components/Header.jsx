@@ -74,7 +74,7 @@ export default function Header() {
             <SearchIcon />
           </button>
           {searchOpen && (
-            <form onSubmit={handleSearchSubmit} className="hidden md:flex items-center gap-2">
+            <form onSubmit={handleSearchSubmit} className="flex items-center gap-2">
               <input
                 type="search"
                 value={searchQuery}
