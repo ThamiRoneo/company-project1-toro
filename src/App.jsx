@@ -16,6 +16,7 @@ import Policy from "./pages/Policy.jsx";
 import Account from "./pages/Account.jsx";
 import SignUp from "./pages/SignUp.jsx";
 import Login from "./pages/Login.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -45,6 +46,7 @@ export default function App() {
             <Route path="/account" element={<Account />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/shipping" element={<Policy title="Shipping" body="Free delivery on orders over R500. Nationwide shipping within 2–4 business days." />} />
             <Route path="/returns" element={<Policy title="Returns" body="Unopened beans may be returned within 14 days of delivery." />} />
             <Route path="/privacy" element={<Policy title="Privacy Policy" body="We only use your details to fulfil and improve your orders." />} />
