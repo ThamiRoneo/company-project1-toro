@@ -1,6 +1,79 @@
 // Franchise page — content adapted from torocoffee.co.za/franchise.
+import { useEffect, useRef, useState } from "react";
 import hero1 from "../assets/hero1.jpg";
+
 export default function Franchise() {
+  const [form, setForm] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    location: "",
+    investmentRange: "",
+    about: "",
+  });
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const fullNameRef = useRef(null);
+
+  useEffect(() => {
+    fullNameRef.current?.focus();
+  }, []);
+
+  function update(key, value) {
+    setForm((prev) => ({ ...prev, [key]: value }));
+    if (touched[key]) validateField(key, value);
+  }
+
+  function validateField(key, value) {
+    let message = "";
+    if (!value.trim()) {
+      message = "This field is required";
+    } else if (key === "email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(value.trim())) message = "Enter a valid email address";
+    } else if (key === "phone") {
+      const phoneRegex = /^[+]?[\d\s()-]{7,}$/;
+      if (!phoneRegex.test(value.trim())) message = "Enter a valid phone number";
+    }
+    setErrors((prev) => ({ ...prev, [key]: message }));
+    return !message;
+  }
+
+  function validateAll() {
+    const nextTouched = {
+      fullName: true,
+      email: true,
+      phone: true,
+      location: true,
+      investmentRange: true,
+      about: true,
+    };
+    setTouched(nextTouched);
+    let valid = true;
+    Object.keys(form).forEach((key) => {
+      if (!validateField(key, form[key])) valid = false;
+    });
+    return valid;
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    if (!validateAll()) return;
+
+    const subject = encodeURIComponent("Franchise Inquiry");
+    const body = encodeURIComponent(
+      `Full Name: ${form.fullName}\nEmail: ${form.email}\nPhone: ${form.phone}\nPreferred Location: ${form.location}\nInvestment Range: ${form.investmentRange}\nAbout: ${form.about}`
+    );
+    window.location.href = `mailto:info@torocoffee.co.za?subject=${subject}&body=${body}`;
+  }
+
+  function inputClasses(key) {
+    const base =
+      "flex-1 p-2 rounded border bg-white text-toro-espresso placeholder:text-toro-brown";
+    const error = touched[key] && errors[key];
+    return `${base} ${error ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/40" : "border-toro-sand focus:border-toro-brown focus:ring-2 focus:ring-toro-brown/30"}`;
+  }
+
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
       <header className="relative overflow-hidden rounded-toro mb-8 text-center">
@@ -184,61 +257,97 @@ export default function Franchise() {
           24-48 hours.
         </p>
 
-        <form className="mt-4 grid gap-3 md:grid-cols-2">
+        <form onSubmit={handleSubmit} className="mt-4 grid gap-3 md:grid-cols-2">
           <div className="flex items-center gap-2">
             <UserIcon />
             <input
+              ref={fullNameRef}
               name="fullName"
               placeholder="Full Name"
-              className="flex-1 p-2 rounded border"
+              value={form.fullName}
+              onChange={(e) => update("fullName", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, fullName: true }))}
+              className={inputClasses("fullName")}
             />
           </div>
+          {touched.fullName && errors.fullName && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.fullName}</p>
+          )}
           <div className="flex items-center gap-2">
             <MailIcon />
             <input
               name="email"
               placeholder="Email"
-              className="flex-1 p-2 rounded border"
+              value={form.email}
+              onChange={(e) => update("email", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, email: true }))}
+              className={inputClasses("email")}
             />
           </div>
+          {touched.email && errors.email && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.email}</p>
+          )}
           <div className="flex items-center gap-2">
             <PhoneIcon />
             <input
               name="phone"
               placeholder="Phone"
-              className="flex-1 p-2 rounded border"
+              value={form.phone}
+              onChange={(e) => update("phone", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, phone: true }))}
+              className={inputClasses("phone")}
             />
           </div>
+          {touched.phone && errors.phone && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.phone}</p>
+          )}
           <div className="flex items-center gap-2">
             <MapPinIcon />
             <input
               name="location"
               placeholder="Preferred Location"
-              className="flex-1 p-2 rounded border"
+              value={form.location}
+              onChange={(e) => update("location", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, location: true }))}
+              className={inputClasses("location")}
             />
           </div>
+          {touched.location && errors.location && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.location}</p>
+          )}
           <div className="flex items-center gap-2">
             <BriefcaseIcon />
             <select
               name="investmentRange"
-              className="flex-1 p-2 rounded border"
+              value={form.investmentRange}
+              onChange={(e) => update("investmentRange", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, investmentRange: true }))}
+              className={inputClasses("investmentRange")}
             >
-              <option>Select Range</option>
+              <option value="">Select Range</option>
               <option>R500,000 - R750,000</option>
               <option>R750,000 - R1,000,000</option>
               <option>R1,000,000 - R1,500,000</option>
               <option>Other</option>
             </select>
           </div>
+          {touched.investmentRange && errors.investmentRange && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.investmentRange}</p>
+          )}
           <div className="flex items-center gap-2 md:col-span-2">
             <MessageIcon />
             <textarea
               name="about"
-              placeholder="Tell us about yourself...
-i.e. Share your experiences, goals, and why you want to franchise us."
-              className="flex-1 p-2 rounded border"
+              placeholder="Tell us about yourself...\ni.e. Share your experiences, goals, and why you want to franchise us."
+              value={form.about}
+              onChange={(e) => update("about", e.target.value)}
+              onBlur={() => setTouched((p) => ({ ...p, about: true }))}
+              className={inputClasses("about")}
             />
           </div>
+          {touched.about && errors.about && (
+            <p className="md:col-span-2 text-sm text-red-600">{errors.about}</p>
+          )}
 
           <button
             type="submit"
