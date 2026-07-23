@@ -141,10 +141,9 @@ export default function About() {
       {/* Intro */}
       <section className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
         <p className="text-center text-lg text-toro-espresso">
-          Toro began with a simple but bold dream: to bring exceptional
-          specialty coffee into everyday life. Not just coffee for cafes, but
-          coffee for people—for conversations, community, and moments that
-          matter.
+          After a decade of hands-on experience, learning, refining, and
+          building, Toro is now open to sharing this dream with franchise
+          partners.
         </p>
       </section>
 
