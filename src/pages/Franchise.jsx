@@ -1,5 +1,5 @@
 // Franchise page — content adapted from torocoffee.co.za/franchise.
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import hero1 from "../assets/hero1.jpg";
 
 export default function Franchise() {
@@ -15,9 +15,9 @@ export default function Franchise() {
   const [touched, setTouched] = useState({});
   const fullNameRef = useRef(null);
 
-  useEffect(() => {
-    fullNameRef.current?.focus();
-  }, []);
+  function focusFullName() {
+    setTimeout(() => fullNameRef.current?.focus(), 100);
+  }
 
   function update(key, value) {
     setForm((prev) => ({ ...prev, [key]: value }));
@@ -101,6 +101,7 @@ export default function Franchise() {
             </a>
             <a
               href="#inquiry"
+              onClick={focusFullName}
               className="rounded-full border border-toro-brown px-6 py-3 font-semibold text-toro-brown bg-toro-cream/60 hover:bg-toro-sand"
             >
               Franchise Inquiry
@@ -247,7 +248,7 @@ export default function Franchise() {
 
       <section
         id="inquiry"
-        className="mt-12 bg-white/60 p-6 rounded-lg shadow-sm"
+        className="mt-12 bg-white/60 p-6 text-center rounded-lg shadow-sm"
       >
         <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso">
           Franchise Inquiry Form
@@ -257,7 +258,7 @@ export default function Franchise() {
           24-48 hours.
         </p>
 
-        <form onSubmit={handleSubmit} className="mt-4 grid gap-3 md:grid-cols-2">
+        <form onSubmit={handleSubmit} className="mt-4 grid gap-3 md:grid-cols-2 ">
           <div className="flex items-center gap-2">
             <UserIcon />
             <input
@@ -270,9 +271,9 @@ export default function Franchise() {
               className={inputClasses("fullName")}
             />
           </div>
-          {touched.fullName && errors.fullName && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.fullName}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.fullName && errors.fullName ? errors.fullName : ""}
+          </p>
           <div className="flex items-center gap-2">
             <MailIcon />
             <input
@@ -284,9 +285,9 @@ export default function Franchise() {
               className={inputClasses("email")}
             />
           </div>
-          {touched.email && errors.email && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.email}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.email && errors.email ? errors.email : ""}
+          </p>
           <div className="flex items-center gap-2">
             <PhoneIcon />
             <input
@@ -298,9 +299,9 @@ export default function Franchise() {
               className={inputClasses("phone")}
             />
           </div>
-          {touched.phone && errors.phone && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.phone}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.phone && errors.phone ? errors.phone : ""}
+          </p>
           <div className="flex items-center gap-2">
             <MapPinIcon />
             <input
@@ -312,9 +313,9 @@ export default function Franchise() {
               className={inputClasses("location")}
             />
           </div>
-          {touched.location && errors.location && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.location}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.location && errors.location ? errors.location : ""}
+          </p>
           <div className="flex items-center gap-2">
             <BriefcaseIcon />
             <select
@@ -331,9 +332,9 @@ export default function Franchise() {
               <option>Other</option>
             </select>
           </div>
-          {touched.investmentRange && errors.investmentRange && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.investmentRange}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.investmentRange && errors.investmentRange ? errors.investmentRange : ""}
+          </p>
           <div className="flex items-center gap-2 md:col-span-2">
             <MessageIcon />
             <textarea
@@ -345,9 +346,9 @@ export default function Franchise() {
               className={inputClasses("about")}
             />
           </div>
-          {touched.about && errors.about && (
-            <p className="md:col-span-2 text-sm text-red-600">{errors.about}</p>
-          )}
+          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
+            {touched.about && errors.about ? errors.about : ""}
+          </p>
 
           <button
             type="submit"
