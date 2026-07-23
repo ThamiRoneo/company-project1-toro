@@ -20,9 +20,26 @@ import ForgotPassword from "./pages/ForgotPassword.jsx";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+
+  useEffect(() => {
+    function handleClick(event) {
+      const anchor = event.target.closest("a[href^='/']");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href) return;
+      if (href === pathname) {
+        event.preventDefault();
+        window.scrollTo(0, 0);
+      }
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [pathname]);
+
   return null;
 }
 
