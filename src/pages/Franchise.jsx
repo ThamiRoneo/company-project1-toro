@@ -107,7 +107,7 @@ export default function Franchise() {
       </header>
 
       <section className="grid gap-8 md:grid-cols-2">
-        <div className="bg-white/40 p-8 rounded-lg">
+        <div className="bg-white/40 border border-toro-char p-8 rounded-lg">
           <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso border-b border-toro-sand p-3">
             Why Franchise with Us?
           </h2>
@@ -135,7 +135,7 @@ export default function Franchise() {
           </ul>
         </div>
 
-        <div className="bg-white/40 p-8 rounded-lg">
+        <div className="bg-white/40 border border-toro-char p-8 rounded-lg">
           <h2 className="font-display font-semibold border-b border-toro-sand p-3 text-center text-2xl text-toro-espresso">
             What We Provide
           </h2>
@@ -177,7 +177,7 @@ export default function Franchise() {
           Franchise Requirements
         </h2>
         <div className="mt-4 grid gap-6 md:grid-cols-2">
-          <div className="bg-toro-sand/40 p-5 rounded-lg">
+          <div className="bg-toro-sand/40 border border-toro-clay p-5 rounded-lg">
             <h3 className="font-display font-bold border-b p-2 text-center">
               Financial Requirements
             </h3>
@@ -200,7 +200,7 @@ export default function Franchise() {
             </ul>
           </div>
 
-          <div className="bg-toro-sand/40 p-5 rounded-lg">
+          <div className="bg-toro-sand/40 border border-toro-clay p-5 rounded-lg">
             <h3 className="font-display font-bold border-b p-2 text-center">
               Personal Requirements
             </h3>
@@ -216,30 +216,35 @@ export default function Franchise() {
       </section>
 
       <section className="mt-12">
-        <h2 className="font-display font-semibold border-t border-toro-sand pt-6 pb-2 text-2xl text-center text-toro-espresso">
-          How to Get Started
-        </h2>
-        <ol className="mt-4 list-decimal list-inside space-y-3 text-toro-brown">
-          <li>
-            <strong>Submit Inquiry:</strong> Fill out the franchise inquiry form
-            below to express your interest.
-          </li>
-          <li>
-            <strong>Initial Interview:</strong> Meet with our franchise team to
-            discuss goals and opportunity.
-          </li>
-          <li>
-            <strong>Discovery Day:</strong> Visit our HQ, meet the team and
-            experience operations firsthand.
-          </li>
-          <li>
-            <strong>Agreement & Training:</strong> Sign the agreement and begin
-            training.
-          </li>
-          <li>
-            <strong>Grand Opening:</strong> Launch your store with full support.
-          </li>
-        </ol>
+        <div className="border border-toro-clay rounded-toro bg-toro-sand/40 p-6">
+          <h2 className="font-display font-semibold border-b border-toro-sand pb-2 text-2xl text-center text-toro-espresso">
+            How to Get Started
+          </h2>
+          <div className="mx-auto max-w-2xl">
+            <ol className="mt-4 list-decimal space-y-3 pl-6 text-toro-brown">
+              <li>
+                <strong>Submit Inquiry:</strong> Fill out the franchise inquiry
+                form below to express your interest.
+              </li>
+              <li>
+                <strong>Initial Interview:</strong> Meet with our franchise team
+                to discuss goals and opportunity.
+              </li>
+              <li>
+                <strong>Discovery Day:</strong> Visit our HQ, meet the team and
+                experience operations firsthand.
+              </li>
+              <li>
+                <strong>Agreement & Training:</strong> Sign the agreement and
+                begin training.
+              </li>
+              <li>
+                <strong>Grand Opening:</strong> Launch your store with full
+                support.
+              </li>
+            </ol>
+          </div>
+        </div>
       </section>
 
       <section
@@ -341,7 +346,7 @@ export default function Franchise() {
                 <MessageIcon />
                 <textarea
                   name="about"
-                  placeholder="Tell us about yourself...\ni.e. Share your experiences, goals, and why you want to franchise us."
+                  placeholder="Tell us about yourself... i.e. Share your experiences, goals, and why you want to franchise us."
                   value={form.about}
                   onChange={(e) => update("about", e.target.value)}
                   onBlur={() => setTouched((p) => ({ ...p, about: true }))}
