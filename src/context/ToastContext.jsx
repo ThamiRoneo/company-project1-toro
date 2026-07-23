@@ -16,15 +16,17 @@ export function ToastProvider({ children }) {
   return (
     <ToastContext.Provider value={{ showToast }}>
       {children}
-      <div className="fixed top-4 right-4 z-50 flex flex-col gap-2">
+      <div className="fixed top-20 right-4 z-50 flex flex-col gap-2">
         {toasts.map((toast) => (
           <div
             key={toast.id}
-            className="rounded-toro border border-toro-sand bg-white/80 px-4 py-3 shadow-lg backdrop-blur-sm"
+            className="rounded-toro border border-toro-sand bg-toro-sand/50 px-6 py-4 shadow-lg backdrop-blur-sm"
             role="status"
             aria-live="polite"
           >
-            <p className="text-sm font-semibold text-toro-espresso">{toast.message}</p>
+            <p className="text-lg font-semibold text-toro-brown">
+              {toast.message}
+            </p>
           </div>
         ))}
       </div>
