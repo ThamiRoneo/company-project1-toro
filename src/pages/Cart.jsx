@@ -1,9 +1,18 @@
 // Cart page — line-item summary with totals and a checkout entry point.
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/cartConfig.js";
 
 export default function Cart() {
-  const { items, count, total, removeFromCart, updateQuantity, clearCart } = useCart();
+  const { items, count, total, removeFromCart, updateQuantity, clearCart, user } = useCart();
+  const navigate = useNavigate();
+
+  function handleCheckout() {
+    if (!user) {
+      navigate("/login", { state: { from: "/cart" } });
+      return;
+    }
+    alert("Checkout flow would start here (demo only).");
+  }
 
   if (!items.length) {
     return (
@@ -92,6 +101,7 @@ export default function Cart() {
           </Link>
           <button
             type="button"
+            onClick={handleCheckout}
             className="rounded-full bg-toro-brown px-6 py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso"
           >
             Proceed to Checkout

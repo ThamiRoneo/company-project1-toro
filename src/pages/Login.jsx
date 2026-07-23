@@ -1,11 +1,20 @@
 // Login page — wraps the reusable LoginForm.
+import { useLocation, useNavigate } from "react-router-dom";
 import LoginForm from "../components/LoginForm.jsx";
+import { useCart } from "../context/cartConfig.js";
 
 export default function Login() {
+  const { login } = useCart();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   function handleSubmit(form) {
     alert(
-      `Logged in as ${form.email}. Remember me: ${form.remember ? "yes" : "no"}. In a real app this would POST to your backend.`,
+      `Logged in as ${form.email}. Remember me: ${form.remember ? "yes" : "no"}. In a real app this would POST to your backend.`
     );
+    login({ email: form.email });
+    const from = location.state?.from || "/";
+    navigate(from, { replace: true });
   }
 
   function handleGoogleLogin() {
