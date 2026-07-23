@@ -189,7 +189,7 @@ export default function About() {
               <button
                 type="button"
                 onClick={() => setActiveYear(item.year)}
-                className={`absolute left-0 top-1 h-4 w-4 -translate-x-[9px] rounded-full transition-all ${
+                className={`absolute left-0 top-1 h-4 w-4 -translate-x-2.25 rounded-full transition-all ${
                   activeYear === item.year
                     ? "bg-toro-clay ring-4 ring-toro-clay/20"
                     : "bg-toro-sand hover:bg-toro-clay"
@@ -239,8 +239,12 @@ export default function About() {
       {/* Locations */}
       <section className="mx-auto max-w-8xl px-4 py-16 sm:px-6">
         <div className="text-center">
-          <h2 className="font-display text-3xl font-bold text-toro-espresso sm:text-4xl">{LOCATION_HEADING}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-toro-brown">{LOCATION_SUBHEADING}</p>
+          <h2 className="font-display text-3xl font-bold text-toro-espresso sm:text-4xl">
+            {LOCATION_HEADING}
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-toro-brown">
+            {LOCATION_SUBHEADING}
+          </p>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {LOCATIONS.map((location, index) => (
