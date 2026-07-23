@@ -79,8 +79,8 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/locations" className="hover:text-toro-cream">
-                Locations
+              <Link to="/contact" className="hover:text-toro-cream">
+                Contact
               </Link>
             </li>
             <li>

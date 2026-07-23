@@ -11,7 +11,7 @@ const primaryLinks = [
   { to: "/", label: "Home" },
   { to: "/shop", label: "Shop" },
   { to: "/about", label: "About" },
-  { to: "/locations", label: "Locations" },
+  { to: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -116,8 +116,7 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <nav
-          className="border-t border-toro-sand bg-toro-cream md:hidden"
+        <nav className="border-t border-toro-sand bg-toro-cream md:hidden"
           aria-label="Mobile"
         >
           <ul className="flex flex-col px-4 py-2">

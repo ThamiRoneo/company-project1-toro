@@ -9,7 +9,7 @@ import Home from "./pages/Home.jsx";
 import Shop from "./pages/Shop.jsx";
 import ProductDetail from "./pages/ProductDetail.jsx";
 import About from "./pages/About.jsx";
-import Locations from "./pages/Locations.jsx";
+import Contact from "./pages/Contact.jsx";
 import Franchise from "./pages/Franchise.jsx";
 import Cart from "./pages/Cart.jsx";
 import Policy from "./pages/Policy.jsx";
@@ -39,7 +39,7 @@ export default function App() {
             <Route path="/shop" element={<Shop />} />
             <Route path="/product/:id" element={<ProductDetail />} />
             <Route path="/about" element={<About />} />
-            <Route path="/locations" element={<Locations />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/franchise" element={<Franchise />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/account" element={<Account />} />
