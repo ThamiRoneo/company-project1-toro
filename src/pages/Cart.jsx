@@ -83,13 +83,26 @@ export default function Cart() {
             <span>R{total.toFixed(2)}</span>
           </div>
         </div>
-        <button
-          type="button"
-          className="w-full rounded-full bg-toro-brown py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso sm:w-auto sm:px-10"
-        >
-          Proceed to Checkout
-        </button>
-        <p className="text-xs text-toro-brown">We accept Visa, Mastercard, EFT, SnapScan</p>
+        <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <Link
+            to="/shop"
+            className="rounded-full border-2 border-toro-brown px-6 py-3 text-center text-base font-semibold text-toro-brown hover:bg-toro-brown hover:text-toro-cream"
+          >
+            Continue Shopping
+          </Link>
+          <button
+            type="button"
+            className="rounded-full bg-toro-brown px-6 py-3 text-base font-semibold text-toro-cream hover:bg-toro-espresso"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+        <div className="flex items-center gap-4 text-toro-brown">
+          <VisaIcon />
+          <MastercardIcon />
+          <EftIcon />
+          <SnapScanIcon />
+        </div>
       </div>
     </div>
   );
@@ -99,6 +112,41 @@ function TrashIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
       <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+    </svg>
+  );
+}
+
+function VisaIcon() {
+  return (
+    <svg width="32" height="10" viewBox="0 0 32 10" fill="none" aria-hidden="true">
+      <text x="0" y="9" fontSize="9" fontWeight="bold" fill="currentColor">VISA</text>
+    </svg>
+  );
+}
+
+function MastercardIcon() {
+  return (
+    <svg width="24" height="16" viewBox="0 0 24 16" fill="none" aria-hidden="true">
+      <circle cx="9" cy="8" r="6" fill="#EB001B" />
+      <circle cx="15" cy="8" r="6" fill="#F79E1B" />
+    </svg>
+  );
+}
+
+function EftIcon() {
+  return (
+    <svg width="28" height="12" viewBox="0 0 28 12" fill="none" aria-hidden="true">
+      <rect x="0" y="0" width="28" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <text x="4" y="9" fontSize="7" fontWeight="bold" fill="currentColor">EFT</text>
+    </svg>
+  );
+}
+
+function SnapScanIcon() {
+  return (
+    <svg width="30" height="12" viewBox="0 0 30 12" fill="none" aria-hidden="true">
+      <rect x="0" y="0" width="30" height="12" rx="2" stroke="currentColor" strokeWidth="1.5" />
+      <text x="2" y="9" fontSize="7" fontWeight="bold" fill="currentColor">SnapScan</text>
     </svg>
   );
 }
