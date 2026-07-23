@@ -30,10 +30,12 @@ export default function Franchise() {
       message = "This field is required";
     } else if (key === "email") {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(value.trim())) message = "Enter a valid email address";
+      if (!emailRegex.test(value.trim()))
+        message = "Enter a valid email address";
     } else if (key === "phone") {
       const phoneRegex = /^[+]?[\d\s()-]{7,}$/;
-      if (!phoneRegex.test(value.trim())) message = "Enter a valid phone number";
+      if (!phoneRegex.test(value.trim()))
+        message = "Enter a valid phone number";
     }
     setErrors((prev) => ({ ...prev, [key]: message }));
     return !message;
@@ -62,14 +64,14 @@ export default function Franchise() {
 
     const subject = encodeURIComponent("Franchise Inquiry");
     const body = encodeURIComponent(
-      `Full Name: ${form.fullName}\nEmail: ${form.email}\nPhone: ${form.phone}\nPreferred Location: ${form.location}\nInvestment Range: ${form.investmentRange}\nAbout: ${form.about}`
+      `Full Name: ${form.fullName}\nEmail: ${form.email}\nPhone: ${form.phone}\nPreferred Location: ${form.location}\nInvestment Range: ${form.investmentRange}\nAbout: ${form.about}`,
     );
     window.location.href = `mailto:info@torocoffee.co.za?subject=${subject}&body=${body}`;
   }
 
   function inputClasses(key) {
     const base =
-      "flex-1 p-2 rounded border bg-white text-toro-espresso placeholder:text-toro-brown";
+      "flex-1 w-full p-2 rounded border bg-white text-toro-espresso placeholder:text-toro-brown";
     const error = touched[key] && errors[key];
     return `${base} ${error ? "border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/40" : "border-toro-sand focus:border-toro-brown focus:ring-2 focus:ring-toro-brown/30"}`;
   }
@@ -93,12 +95,6 @@ export default function Franchise() {
             comprehensive support.
           </p>
           <div className="mt-6 flex justify-center gap-3">
-            <a
-              href="mailto:franchise@torocoffee.co.za"
-              className="rounded-full bg-toro-brown px-6 py-3 font-semibold text-toro-cream hover:bg-toro-espresso"
-            >
-              Apply Now
-            </a>
             <a
               href="#inquiry"
               onClick={focusFullName}
@@ -250,118 +246,128 @@ export default function Franchise() {
         id="inquiry"
         className="mt-12 bg-white/60 p-6 text-center rounded-lg shadow-sm"
       >
-        <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso">
-          Franchise Inquiry Form
-        </h2>
-        <p className="mt-2 text-sm text-center text-toro-brown">
-          Fill out the form below and our franchise team will contact you within
-          24-48 hours.
-        </p>
-
-        <form onSubmit={handleSubmit} className="mt-4 grid gap-3 md:grid-cols-2 ">
-          <div className="flex items-center gap-2">
-            <UserIcon />
-            <input
-              ref={fullNameRef}
-              name="fullName"
-              placeholder="Full Name"
-              value={form.fullName}
-              onChange={(e) => update("fullName", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, fullName: true }))}
-              className={inputClasses("fullName")}
-            />
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.fullName && errors.fullName ? errors.fullName : ""}
-          </p>
-          <div className="flex items-center gap-2">
-            <MailIcon />
-            <input
-              name="email"
-              placeholder="Email"
-              value={form.email}
-              onChange={(e) => update("email", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, email: true }))}
-              className={inputClasses("email")}
-            />
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.email && errors.email ? errors.email : ""}
-          </p>
-          <div className="flex items-center gap-2">
-            <PhoneIcon />
-            <input
-              name="phone"
-              placeholder="Phone"
-              value={form.phone}
-              onChange={(e) => update("phone", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, phone: true }))}
-              className={inputClasses("phone")}
-            />
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.phone && errors.phone ? errors.phone : ""}
-          </p>
-          <div className="flex items-center gap-2">
-            <MapPinIcon />
-            <input
-              name="location"
-              placeholder="Preferred Location"
-              value={form.location}
-              onChange={(e) => update("location", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, location: true }))}
-              className={inputClasses("location")}
-            />
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.location && errors.location ? errors.location : ""}
-          </p>
-          <div className="flex items-center gap-2">
-            <BriefcaseIcon />
-            <select
-              name="investmentRange"
-              value={form.investmentRange}
-              onChange={(e) => update("investmentRange", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, investmentRange: true }))}
-              className={inputClasses("investmentRange")}
-            >
-              <option value="">Select Range</option>
-              <option>R500,000 - R750,000</option>
-              <option>R750,000 - R1,000,000</option>
-              <option>R1,000,000 - R1,500,000</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.investmentRange && errors.investmentRange ? errors.investmentRange : ""}
-          </p>
-          <div className="flex items-center gap-2 md:col-span-2">
-            <MessageIcon />
-            <textarea
-              name="about"
-              placeholder="Tell us about yourself...\ni.e. Share your experiences, goals, and why you want to franchise us."
-              value={form.about}
-              onChange={(e) => update("about", e.target.value)}
-              onBlur={() => setTouched((p) => ({ ...p, about: true }))}
-              className={inputClasses("about")}
-            />
-          </div>
-          <p className="md:col-span-2 min-h-[1.25rem] text-sm text-red-600">
-            {touched.about && errors.about ? errors.about : ""}
+        <div className="mx-auto max-w-2xl">
+          <h2 className="font-display font-semibold text-center text-2xl text-toro-espresso">
+            Franchise Inquiry Form
+          </h2>
+          <p className="mt-2 text-sm text-center text-toro-brown">
+            Fill out the form below and our team will contact you within 24–48
+            hours.
           </p>
 
-          <button
-            type="submit"
-            className="mt-2 inline-block rounded-full bg-toro-brown px-6 py-3 font-semibold text-toro-cream hover:bg-toro-espresso md:col-span-2"
-          >
-            Submit Franchise Inquiry
-          </button>
-        </form>
+          <form onSubmit={handleSubmit} className="mt-4 mx-auto max-w-xl">
+            <div className="grid gap-3">
+              <div className="flex items-center gap-2">
+                <UserIcon />
+                <input
+                  ref={fullNameRef}
+                  name="fullName"
+                  placeholder="Full Name"
+                  value={form.fullName}
+                  onChange={(e) => update("fullName", e.target.value)}
+                  onBlur={() => setTouched((p) => ({ ...p, fullName: true }))}
+                  className={inputClasses("fullName")}
+                />
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.fullName && errors.fullName ? errors.fullName : ""}
+              </p>
+              <div className="flex items-center gap-2">
+                <MailIcon />
+                <input
+                  name="email"
+                  placeholder="Email"
+                  value={form.email}
+                  onChange={(e) => update("email", e.target.value)}
+                  onBlur={() => setTouched((p) => ({ ...p, email: true }))}
+                  className={inputClasses("email")}
+                />
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.email && errors.email ? errors.email : ""}
+              </p>
+              <div className="flex items-center gap-2">
+                <PhoneIcon />
+                <input
+                  name="phone"
+                  placeholder="Phone"
+                  value={form.phone}
+                  onChange={(e) => update("phone", e.target.value)}
+                  onBlur={() => setTouched((p) => ({ ...p, phone: true }))}
+                  className={inputClasses("phone")}
+                />
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.phone && errors.phone ? errors.phone : ""}
+              </p>
+              <div className="flex items-center gap-2">
+                <MapPinIcon />
+                <input
+                  name="location"
+                  placeholder="Preferred Location"
+                  value={form.location}
+                  onChange={(e) => update("location", e.target.value)}
+                  onBlur={() => setTouched((p) => ({ ...p, location: true }))}
+                  className={inputClasses("location")}
+                />
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.location && errors.location ? errors.location : ""}
+              </p>
+              <div className="flex items-center gap-2">
+                <BriefcaseIcon />
+                <select
+                  name="investmentRange"
+                  value={form.investmentRange}
+                  onChange={(e) => update("investmentRange", e.target.value)}
+                  onBlur={() =>
+                    setTouched((p) => ({ ...p, investmentRange: true }))
+                  }
+                  className={inputClasses("investmentRange")}
+                >
+                  <option value="">Select Range</option>
+                  <option>R500,000 - R750,000</option>
+                  <option>R750,000 - R1,000,000</option>
+                  <option>R1,000,000 - R1,500,000</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.investmentRange && errors.investmentRange
+                  ? errors.investmentRange
+                  : ""}
+              </p>
+              <div className="flex items-center gap-2">
+                <MessageIcon />
+                <textarea
+                  name="about"
+                  placeholder="Tell us about yourself...\ni.e. Share your experiences, goals, and why you want to franchise us."
+                  value={form.about}
+                  onChange={(e) => update("about", e.target.value)}
+                  onBlur={() => setTouched((p) => ({ ...p, about: true }))}
+                  className={inputClasses("about")}
+                />
+              </div>
+              <p className="min-h-[1.25rem] text-center text-sm text-red-600">
+                {touched.about && errors.about ? errors.about : ""}
+              </p>
 
-        <p className="mt-4 text-xs text-toro-brown text-center">
-          By submitting this form, you agree to be contacted by our franchise
-          team regarding franchise opportunities.
-        </p>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className="rounded-full bg-toro-brown px-6 py-3 font-semibold text-toro-cream hover:bg-toro-espresso"
+                >
+                  Submit Franchise Inquiry
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <p className="mt-4 text-xs text-center text-toro-brown">
+            By submitting this form, you agree to be contacted about franchise
+            opportunities.
+          </p>
+        </div>
       </section>
     </div>
   );
