@@ -68,7 +68,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-2xl bg-toro-brown/40 px-4 py-12 sm:px-6">
       <div className="text-center">
         <h1 className="font-display text-4xl font-bold text-toro-espresso sm:text-5xl">
           Contact Us
