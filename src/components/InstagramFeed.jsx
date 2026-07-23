@@ -63,7 +63,7 @@ export default function InstagramFeed({ username }) {
           rel="noreferrer noopener"
           className="rounded-full border border-toro-brown px-4 py-2 text-sm font-semibold text-toro-brown hover:bg-toro-brown hover:text-toro-cream"
         >
-          Follow on Instagram
+          Follow Us on Instagram
         </a>
       </div>
 
