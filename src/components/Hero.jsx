@@ -14,7 +14,7 @@ export default function Hero() {
       />
 
       <div className="relative z-15 mx-auto max-w-3xl px-4 text-center">
-        <h1 className="font-display text-4xl font-bold sm:text-5xl md:text-6xl">
+        <h1 className="font-display text-6xl font-bold sm:text-5xl md:text-6xl">
           Artisan Coffee Beans
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-lg text-toro-sand">
