@@ -112,6 +112,42 @@ When pressing the "Add to Cart" button, this is the new cart preview, which offe
 
 ![Add to cart redesign](./src/assets/add-cart-redesign.png)
 
+**About page**
+![About page](./src/assets/old-about-design.png)
+
+**About Redesign**
+![About Redesign](./src/assets/about-redesign.png)
+
+**Contact page**
+![Contact page](./src/assets/old-contact-design.png)
+
+**Contact Redesign**
+![Contact Redesign](./src/assets/contact-redesign.png)
+
+**Franchise page**
+![Franchise page](./src/assets/old-franchise-design.png)
+
+**Franchise Redesign**
+![Franchise Redesign](./src/assets/franchise-redesign.png)
+
+**Cart page**
+![Cart page](./src/assets/old-cart-design.png)
+
+**Cart Redesign**
+![Cart Redesign](./src/assets/cart-redesign.png)
+
+**Login page**
+![Login page](./src/assets/old-login-design.png)
+
+**Login Redesign**
+![Login Redesign](./src/assets/login-redesign.png)
+
+**Sign-up page**
+![Sign-up page](./src/assets/old-signup-design.png)
+
+**Sign-up Redesign**
+![Sign-up Redesign](./src/assets/signup-redesign.png)
+
 ## Design Decisions
 
 Key fixes and improvements made in this redesign, based on the audit in `BRIEF.md`:
@@ -133,4 +169,4 @@ As required by the project brief, Toro Coffee was contacted directly to share th
 - [x] `BRIEF.md` — company research & justification
 - [x] Redesigned website (React + Tailwind CSS)
 - [x] Proof of outreach to Toro Coffee
-- [x] Live deployed link — [torocoffee-app.netlify.app](https://torocoffee-app.netlify.app
+- [x] Live deployed link — [torocoffee.vercel.app](https://torocoffee.vercel.app)
